@@ -21,6 +21,10 @@ const itemNavbar = [
     text: "Editorial",
     link: "/editorial",
   },
+  {
+    text: "A Propos",
+    link: "/a-propos",
+  },
 ];
 
 export default function Navbar() {
