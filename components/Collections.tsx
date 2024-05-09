@@ -17,9 +17,9 @@ const Collections = async () => {
       <h1>{lastCollection.title}</h1>
       <p>{lastCollection.description}</p>
       <div className="flex flex-wrap justify-center gap-10 md:gap-20">
-        {/* {firstTwoProducts.map((product: ProductType) => (
+        {firstTwoProducts.map((product: ProductType) => (
           <ProductCard key={product._id} product={product} />
-        ))} */}
+        ))}
       </div>
     </article>
   );

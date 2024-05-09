@@ -1,10 +1,14 @@
 "use client";
 import useCart from "@/lib/hooks/useCart";
+import { useUser } from "@clerk/nextjs";
 import { MinusCircle, PlusCircle, Trash } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 export default function MonPanier() {
+  const router = useRouter();
+  const { user } = useUser();
   const cart = useCart();
   const total = cart.cartItems.reduce(
     (acc, cartItem) => acc + cartItem.item.price * cartItem.quantity,
@@ -12,7 +16,30 @@ export default function MonPanier() {
   );
   const totalRounded = parseFloat(total.toFixed(2));
 
-  console.log(cart.cartItems);
+  const customer = {
+    clerkId: user?.id,
+    email: user?.emailAddresses[0].emailAddress,
+    name: user?.fullName,
+  };
+
+  const handleCheckout = async () => {
+    try {
+      if (!user) {
+        router.push("sign-in");
+      } else {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/checkout`, {
+          method: "POST",
+          body: JSON.stringify({ cartItems: cart.cartItems, customer }),
+        });
+        const data = await res.json();
+        window.location.href = data.url;
+        console.log("[checkout-POST]", data);
+      }
+    } catch (error) {
+      console.log("[checkout-POST]", error);
+    }
+  };
+
   return (
     <section className="pt-[7rem] lg:px-[5rem] bg-slate-600">
       <h1 className="text-center text-[3rem]">Mon Panier</h1>
@@ -43,7 +70,10 @@ export default function MonPanier() {
                     <MinusCircle
                       size={20}
                       className="text-black hover:text-red-500 cursor-pointer"
-                      onClick={() => cart.decreaseQuantity(cartItem.item._id)}
+                      onClick={() =>
+                        cartItem.quantity > 1 &&
+                        cart.decreaseQuantity(cartItem.item._id)
+                      }
                     />
                     <p>{cartItem.quantity}</p>
                     <PlusCircle
@@ -80,7 +110,10 @@ export default function MonPanier() {
             <span>Total</span>
             <span>{totalRounded} €</span>
           </div>
-          <button className="border rounded-sm bg-white py-3 w-full hover:bg-zinc-700">
+          <button
+            className="border rounded-sm bg-white py-3 w-full hover:bg-zinc-700"
+            onClick={handleCheckout}
+          >
             Checkout
           </button>
         </div>

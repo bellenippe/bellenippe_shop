@@ -22,7 +22,7 @@ const ProductInfos = ({ productInfos }: { productInfos: ProductType }) => {
         <HeartForFavorite product={productInfos} />
       </div>
 
-      <p>{productInfos.price}</p>
+      <p>{productInfos.price} €</p>
 
       <div className="flex gap-2">
         <p>Description :</p>
@@ -31,14 +31,14 @@ const ProductInfos = ({ productInfos }: { productInfos: ProductType }) => {
       {productInfos.colors.length > 0 && (
         <div className="flex gap-2">
           <p>Couleurs :</p>
-          <div>
+          <div className="flex gap-1">
             {productInfos.colors.map((color, index) => (
               <p
                 key={index}
                 className={`border border-black px-2 rounded-sm cursor-pointer ${
                   selectedColor === color && "bg-black text-white"
                 }`}
-                onClick={() => setSelectedSize(color)}
+                onClick={() => setSelectedColor(color)}
               >
                 {color}
               </p>
@@ -68,7 +68,9 @@ const ProductInfos = ({ productInfos }: { productInfos: ProductType }) => {
 
       <div className="felx flex-col gap-2">
         <p>Quantité :</p>
-        {productInfos.stock === 1 ? (
+        {productInfos.stock === 0 ? (
+          <p>Ce produit n'est plus en stock</p>
+        ) : productInfos.stock === 1 ? (
           <p>Pièce Unique</p>
         ) : (
           <div className="flex gap-4 items-center">
@@ -91,6 +93,7 @@ const ProductInfos = ({ productInfos }: { productInfos: ProductType }) => {
 
       <button
         className="outline py-3 rounded-sm hover:bg-black hover:text-white"
+        disabled={productInfos.stock === 0}
         onClick={() => {
           cart.addItem({
             item: productInfos,
