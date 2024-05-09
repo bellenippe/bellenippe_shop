@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { UserButton, useUser } from "@clerk/nextjs";
 import { CircleUserRound, ShoppingCart } from "lucide-react";
+import useCart from "@/lib/hooks/useCart";
 // import { motion, useMotionValue, useTransform } from "framer-motion";
 
 const itemNavbar = [
@@ -29,6 +30,7 @@ const itemNavbar = [
 
 export default function Navbar() {
   const { user } = useUser();
+  const cart = useCart();
 
   const [navActive, setNavActive] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -117,7 +119,7 @@ export default function Navbar() {
           })}
           <Link href="/mon-panier" className="flex">
             <ShoppingCart className={styles.nav__item} />
-            <p>(0)</p>
+            <p>({cart.cartItems.length})</p>
           </Link>
 
           {user ? (

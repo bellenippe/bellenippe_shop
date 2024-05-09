@@ -14,8 +14,8 @@ type ProductType = {
   collections: [string];
   tags: [string];
   price: number;
-  cost: number;
-  sizes: [string];
+  stock: number;
+  size: [string];
   colors: [string];
   createdAt: string;
   updatedAt: string;

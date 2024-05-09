@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "../globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import Navbar from "@/components/Navbar/Navbar";
+import ToastProvider from "@/lib/providers/ToastProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ClerkProvider>
           <div className="fixed top-0 z-30 w-full flex justify-center">
+            <ToastProvider />
             <Navbar />
           </div>{" "}
           {children}

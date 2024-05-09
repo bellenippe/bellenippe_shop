@@ -1,4 +1,4 @@
-import { getCollections, getProductById } from "@/lib/actions";
+import { getCollections, getProductById } from "@/lib/actions/actions";
 import ProductCard from "./ProductCard";
 
 const Collections = async () => {
@@ -10,14 +10,16 @@ const Collections = async () => {
 
   const firstTwoProducts = await Promise.all(productPromises);
 
+  console.log(firstTwoProducts);
+
   return (
     <article className="">
       <h1>{lastCollection.title}</h1>
       <p>{lastCollection.description}</p>
       <div className="flex flex-wrap justify-center gap-10 md:gap-20">
-        {firstTwoProducts.map((product: ProductType) => (
+        {/* {firstTwoProducts.map((product: ProductType) => (
           <ProductCard key={product._id} product={product} />
-        ))}
+        ))} */}
       </div>
     </article>
   );

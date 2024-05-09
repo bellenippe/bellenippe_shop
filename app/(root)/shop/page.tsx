@@ -1,6 +1,6 @@
 import ProductCard from "@/components/ProductCard";
 import ProductsList from "@/components/ProductsList";
-import { getCollections, getProducts } from "@/lib/actions";
+import { getCollections, getProducts } from "@/lib/actions/actions";
 import React, { useState } from "react";
 
 export default async function ShopPage() {
