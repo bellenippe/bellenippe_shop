@@ -4,12 +4,19 @@ import { Heart } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-const HeartForFavorite = ({ product }: { product: ProductType }) => {
+interface HeartForFavoriteProps {
+  product: ProductType;
+  updateSignedInUser?: (updatedUser: UserType) => void;
+}
+
+const HeartForFavorite = ({
+  product,
+  updateSignedInUser,
+}: HeartForFavoriteProps) => {
   const router = useRouter();
   const { user } = useUser();
 
   const [loading, setLoading] = useState(false);
-  const [signedInUser, setSignedInUser] = useState<UserType | null>(null);
   const [isLiked, setIsLiked] = useState(false);
 
   const getUser = async () => {
@@ -17,7 +24,6 @@ const HeartForFavorite = ({ product }: { product: ProductType }) => {
       setLoading(true);
       const res = await fetch("api/users");
       const data = await res.json();
-      setSignedInUser(data); // Quand on a le user, on le stocke dans le state
       setIsLiked(data.wishlist.includes(product._id)); // On vérifie si le produit est dans la wishlist : si il y es, ca passera à true sinon ca reste à false
       setLoading(false);
     } catch (error) {
@@ -46,10 +52,15 @@ const HeartForFavorite = ({ product }: { product: ProductType }) => {
           method: "POST",
           body: JSON.stringify({ productId: product._id }),
         });
+
         const updatedUser = await res.json();
-        setSignedInUser(updatedUser);
+
         setIsLiked(updatedUser.wishlist.includes(product._id));
+
+        updateSignedInUser && updateSignedInUser(updatedUser); // Condition car c'est optionnel
+
         setLoading(false);
+
         console.log("[handleLike]", isLiked);
       }
     } catch (error) {

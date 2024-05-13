@@ -1,54 +1,88 @@
+"use client";
+import { Search } from "lucide-react";
+import { productsStore } from "@/app/store/products";
 import ProductCard from "@/components/ProductCard";
-import ProductsList from "@/components/ProductsList";
-import { getCollections, getProducts } from "@/lib/actions/actions";
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
+import { collectionsStore } from "@/app/store/collections";
 
-export default async function ShopPage() {
-  const products = await getProducts();
-  const collections = await getCollections();
+export default function ShopPage() {
+  const [loading, setLoading] = useState(true);
 
-  //! GESTION DES FILTRES
-  // const [selectedCategoryId, setSelectedCategoryId] = useState("");
-  // const [selectedCollectionId, setSelectedCollectionId] = useState("");
-  // const [searchTerm, setSearchTerm] = useState("");
+  //! Récupération des produits du state global Zustand
+  useEffect(() => {
+    productsStore.getState().fetchProducts();
+    collectionsStore.getState().fetchCollections();
+    setLoading(false);
+  }, []);
 
-  // const handleCategoryChange = (
-  //   event: React.ChangeEvent<HTMLSelectElement>
-  // ) => {
-  //   setSelectedCategoryId(event.currentTarget.value);
-  // };
-  // const handleCollectionChange = (
-  //   event: React.ChangeEvent<HTMLInputElement>
-  // ) => {
-  //   setSelectedCollectionId(event.currentTarget.value);
-  // };
-  // const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   setSearchTerm(event.currentTarget.value);
-  // };
+  const products = productsStore(
+    (state: { products: ProductType[] }) => state.products
+  );
+  const collections = collectionsStore(
+    (state: { collections: CollectionType[] }) => state.collections
+  );
 
-  // const items = products.filter(
-  //   (item: ProductType) =>
-  //     (selectedCategoryId === "" || item.category === selectedCategoryId) &&
-  //     (selectedCollectionId === "" ||
-  //       (item.collections[0] === selectedCollectionId &&
-  //         (searchTerm === "" ||
-  //           item.title.toLowerCase().includes(searchTerm.toLowerCase()))))
-  // );
+  console.log(products);
+
+  //! Tri des produits
+  const [selectedCollectionId, setSelectedCollectionId] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleCollectionChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    setSelectedCollectionId(event.target.value);
+  };
+
+  const handleCategoryChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    setSelectedCategory(event.target.value);
+  };
+
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+  };
+
+  // Produits filtrés par collection, catégorie et/ou recherche
+  const filteredProducts = products.filter((product) => {
+    return (
+      product.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
+      (selectedCollectionId === ""
+        ? true
+        : product.collections.some(
+            (collection: any) =>
+              typeof collection === "object" &&
+              collection._id === selectedCollectionId
+          )) &&
+      (selectedCategory === "" ? true : product.category === selectedCategory)
+    );
+  });
 
   return (
     <>
       <section className="pt-[7rem] px-[5rem] bg-slate-600">
         <h1 className="text-center text-[3rem]">Shop</h1>
-        <div>
-          <select>
-            <option>Tous les produits</option>
-            <option>Haut</option>
-            <option>Bas</option>
-            <option>Ensembles</option>
-            <option>Accessoires</option>
+        <div className="grid md:grid-cols-3 gap-2">
+          <select
+            className="rounded-sm"
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+          >
+            <option value="">Tous les produits</option>
+            <option value="Haut">Haut</option>
+            <option value="Bas">Bas</option>
+            <option value="Ensembles">Ensembles</option>
+            <option value="Accessoires">Accessoires</option>
           </select>
-          <select>
-            <option>Toutes les collections</option>
+
+          <select
+            className="rounded-sm"
+            value={selectedCollectionId}
+            onChange={handleCollectionChange}
+          >
+            <option value="">Toutes les collections</option>
             {collections.map((collection: CollectionType) => (
               <option
                 className="categorie__option"
@@ -59,16 +93,30 @@ export default async function ShopPage() {
               </option>
             ))}
           </select>
+
+          <div className="flex gap-3 border border-grey-2 px-3 py-1 items-center rounded-sm">
+            <input
+              placeholder="Rechercher..."
+              className="outline-none w-full"
+              // value={searchTerm}
+              onChange={handleSearchChange}
+            />
+            <Search className="cursor-pointer h-4 w-4 hover:text-red-600" />
+          </div>
         </div>
-        <div className="h-full flex flex-col gap-12 justify-center items-center bg-black">
+        <div className="h-full flex flex-col gap-12 justify-center items-center">
+          {/* <ProductsList /> */}
           <div className="flex flex-col items-center gap-10 py-8 px-5">
-            {!products || products.length === 0 ? (
+            {!products || filteredProducts.length === 0 ? (
               <p>Aucun Produit trouvé</p>
             ) : (
               <div className="flex flex-wrap justify-center gap-10 md:gap-20">
-                {products.map((product: ProductType) => (
-                  <ProductCard key={product._id} product={product} />
-                ))}
+                {filteredProducts.map(
+                  (product: ProductType) =>
+                    product.stock > 0 && (
+                      <ProductCard key={product._id} product={product} />
+                    )
+                )}
               </div>
             )}
           </div>

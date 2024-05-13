@@ -29,7 +29,7 @@ type UserType = {
 };
 
 type OrderType = {
-  shippingAddress: Object;
+  shippingAdress: Object;
   _id: string;
   customerClerkId: string;
   products: [OrderItemType];

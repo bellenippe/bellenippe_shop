@@ -5,7 +5,13 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { UserButton, useUser } from "@clerk/nextjs";
-import { CircleUserRound, ShoppingCart } from "lucide-react";
+import {
+  CircleUserRound,
+  Heart,
+  LucideLogIn,
+  LucideUser,
+  ShoppingCart,
+} from "lucide-react";
 import useCart from "@/lib/hooks/useCart";
 // import { motion, useMotionValue, useTransform } from "framer-motion";
 
@@ -42,16 +48,8 @@ export default function Navbar() {
     setNavActive(!navActive);
   };
 
-  //! Animation logo
-  // const scrollYLogo = useMotionValue(
-  //   typeof window !== "undefined" ? window.scrollY : 0
-  // );
-  // const rotate = useTransform(scrollYLogo, [0, 2000], [0, 360]);
-
   useEffect(() => {
     const handleScroll = () => {
-      // scrollYLogo.set(window.scrollY);
-
       const isScrolled = window.scrollY > 50;
       if (isScrolled !== scrolled) {
         setScrolled(!scrolled);
@@ -117,18 +115,29 @@ export default function Navbar() {
               </div>
             );
           })}
-          <Link href="/mon-panier" className="flex">
-            <ShoppingCart className={styles.nav__item} />
-            <p>({cart.cartItems.length})</p>
-          </Link>
-
-          {user ? (
-            <UserButton afterSignOutUrl="/sign-in" />
-          ) : (
-            <Link href="/sign-in" className={styles.nav__item}>
-              <CircleUserRound />
+          <div className="flex gap-4">
+            <Link href="/mon-panier" className="flex">
+              <ShoppingCart className={styles.nav__item} />
+              <p>{cart.cartItems.length}</p>
             </Link>
-          )}
+
+            {/* <Link
+              href={user ? "/mon-compte" : "/sign-in"}
+              className={styles.nav__item}
+            >
+              <CircleUserRound />
+            </Link> */}
+
+            {user ? (
+              <Link href="mon-compte" className={styles.nav__item}>
+                <LucideUser />
+              </Link>
+            ) : (
+              <Link href={"/sign-in"} className={styles.nav__item}>
+                <LucideLogIn />
+              </Link>
+            )}
+          </div>
         </div>
       </nav>
     </header>

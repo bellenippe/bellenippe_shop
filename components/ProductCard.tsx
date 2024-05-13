@@ -2,7 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import HeartForFavorite from "./HeartForFavorite";
 
-const ProductCard = ({ product }: { product: ProductType }) => {
+interface ProductCardProps {
+  product: ProductType;
+  updateSignedInUser?: (updatedUser: UserType) => void;
+}
+
+const ProductCard = ({ product, updateSignedInUser }: ProductCardProps) => {
   return (
     <Link href={`/shop/${product._id}`} className="flex flex-col">
       <div className=" bg-orange-400">
@@ -20,7 +25,10 @@ const ProductCard = ({ product }: { product: ProductType }) => {
             <h3>{product.title}</h3>
             <p>{product.price} €</p>
           </div>
-          <HeartForFavorite product={product} />
+          <HeartForFavorite
+            product={product}
+            updateSignedInUser={updateSignedInUser}
+          />
         </div>
       </div>
     </Link>
