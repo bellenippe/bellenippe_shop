@@ -2,9 +2,11 @@ import EditorialCollection from "@/components/EditorialCollection";
 
 export default function EditorialPage() {
   return (
-    <section className="pt-[7rem] px-[5rem] bg-slate-600">
-      <h1 className="text-center text-[3rem]">Editorial</h1>
-      <div>
+    <section>
+      <h1 className="pt-[5rem] pb-4 text-center text-[3rem] text-white font-bold uppercase bg-noir-1 bg-grid-small-white/[0.3]">
+        éditorial
+      </h1>
+      <div className="">
         <EditorialCollection />
       </div>
     </section>

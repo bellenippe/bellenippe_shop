@@ -1,5 +1,5 @@
 import { getCollections, getProductById } from "@/lib/actions/actions";
-import ProductCard from "./ProductCard";
+import ProductCardForHome from "./ProductCardForHome";
 
 const Collections = async () => {
   const collections = await getCollections();
@@ -11,15 +11,35 @@ const Collections = async () => {
   const firstTwoProducts = await Promise.all(productPromises);
 
   console.log(firstTwoProducts);
-
+  // bg-grid-small-black/[0.4]
   return (
-    <article className="">
-      <h1>{lastCollection.title}</h1>
-      <p>{lastCollection.description}</p>
-      <div className="flex flex-wrap justify-center gap-10 md:gap-20">
-        {firstTwoProducts.map((product: ProductType) => (
-          <ProductCard key={product._id} product={product} />
-        ))}
+    <article className="w-full pb-8">
+      <div>
+        <h1 className="p-10 text-center text-[2rem] font-figtree font-bold uppercase text-noir-1 tracking-widest">
+          {lastCollection.title}
+        </h1>
+        <div className="flex flex-wrap justify-center md:justify-center md:px-[10rem] 2xl:px-[20rem] gap-10 md:gap-20 mb-8">
+          {firstTwoProducts.map((product: ProductType) => (
+            <ProductCardForHome key={product._id} product={product} />
+          ))}
+        </div>
+      </div>
+      <div className="pt-2 pb-4 md:pb-4 flex flex-col items-center gap-8 mx-4 md:mx-[10rem] 2xl:mx-[20rem]">
+        {/* //border-t-[1px] border-black */}
+        <p className="text-black font-figtree text-justify tracking-wide">
+          {lastCollection.description} puis rajouter quand meme quelque truc
+          histoire de décrire la collection et voir comment ca rend avec un
+          paragraphe. Je rajouter quand même quelques ligne en plus ou quelques
+          mot en plus car je ne pense pas qu'il va décrire sa nouvelles
+          collections avec des mots clés. Je rajouter quand même quelques ligne
+          en plus ou quelques mot en plus car je ne pense pas qu'il va décrire
+          sa nouvelles collections avec des mots clés. Je rajouter quand même
+          quelques ligne en plus ou quelques mot en plus car je ne pense pas
+          qu'il va décrire sa nouvelles collections avec des mots clés.
+        </p>
+        <button className="w-[90%] md:w-[40%] px-8 py-4 text-white font-figtree font-bold tracking-widest uppercase bg-noir-1 hover:bg-grey-4 hover:text-noir-1 transition-all ease-in-out">
+          Voir la collection
+        </button>
       </div>
     </article>
   );

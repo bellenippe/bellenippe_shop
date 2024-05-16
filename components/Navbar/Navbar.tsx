@@ -63,6 +63,7 @@ export default function Navbar() {
 
   const pathname = usePathname();
 
+  // "sticky top-0 z-50 w-full pt-4 px-4 pb-4 flex justify-center items-center bg-[#0f0f0f]"
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <nav className={styles.nav}>
@@ -99,6 +100,9 @@ export default function Navbar() {
                 : pathname.startsWith(item.link);
             return (
               <div
+                className={`${styles.nav__itemDiv} ${
+                  active ? styles.activeLink : ""
+                }`}
                 key={index}
                 onClick={() => {
                   handleClick();
@@ -115,10 +119,22 @@ export default function Navbar() {
               </div>
             );
           })}
-          <div className="flex gap-4">
-            <Link href="/mon-panier" className="flex">
-              <ShoppingCart className={styles.nav__item} />
-              <p>{cart.cartItems.length}</p>
+          <div
+            className={`${styles.nav__itemDiv} ${
+              pathname.startsWith("/mon-panier") ? styles.activeLink : ""
+            }`}
+          >
+            <Link
+              href="/mon-panier"
+              className={`${styles.nav__item} ${
+                pathname.startsWith("/mon-panier") ? styles.activeLink : ""
+              }`}
+              onClick={() => {
+                handleClick();
+              }}
+            >
+              {/* <ShoppingCart /> */}
+              Mon Panier | <p>{cart.cartItems.length}</p>
             </Link>
 
             {/* <Link
@@ -127,13 +143,34 @@ export default function Navbar() {
             >
               <CircleUserRound />
             </Link> */}
-
+          </div>
+          <div
+            className={`${styles.nav__itemDiv} ${
+              pathname.startsWith("/mon-compte") ? styles.activeLink : ""
+            }`}
+          >
             {user ? (
-              <Link href="mon-compte" className={styles.nav__item}>
+              <Link
+                href="mon-compte"
+                className={`${styles.nav__item} ${
+                  pathname.startsWith("/mon-compte") ? styles.activeLink : ""
+                }`}
+                onClick={() => {
+                  handleClick();
+                }}
+              >
                 <LucideUser />
               </Link>
             ) : (
-              <Link href={"/sign-in"} className={styles.nav__item}>
+              <Link
+                href={"/sign-in"}
+                className={`${styles.nav__item} ${
+                  pathname.startsWith("/sign-in") ? styles.activeLink : ""
+                }`}
+                onClick={() => {
+                  handleClick();
+                }}
+              >
                 <LucideLogIn />
               </Link>
             )}

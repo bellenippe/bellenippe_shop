@@ -62,11 +62,13 @@ export default function ShopPage() {
 
   return (
     <>
-      <section className="pt-[7rem] px-[5rem] bg-slate-600">
-        <h1 className="text-center text-[3rem]">Shop</h1>
-        <div className="grid md:grid-cols-3 gap-2">
+      <section className="">
+        <h1 className="pt-[5rem] pb-4 text-center text-[3rem] text-white font-bold uppercase bg-noir-1 bg-grid-small-white/[0.3]">
+          Shop
+        </h1>
+        <div className="grid md:grid-cols-3 gap-2 md:gap-1 px-4 md:px-[10rem] py-4 bg-grid-small-black/[0.1]">
           <select
-            className="rounded-sm"
+            className="text-white bg-grey-3"
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
           >
@@ -78,7 +80,7 @@ export default function ShopPage() {
           </select>
 
           <select
-            className="rounded-sm"
+            className="bg-grey-3 text-white"
             value={selectedCollectionId}
             onChange={handleCollectionChange}
           >
@@ -94,21 +96,23 @@ export default function ShopPage() {
             ))}
           </select>
 
-          <div className="flex gap-3 border border-grey-2 px-3 py-1 items-center rounded-sm">
+          <div className="flex gap-3 px-3 bg-grey-3 py-1 items-center">
             <input
               placeholder="Rechercher..."
-              className="outline-none w-full"
+              className="outline-none w-full bg-grey-3 text-white placeholder:text-white placeholder-opacity-50"
               // value={searchTerm}
               onChange={handleSearchChange}
             />
-            <Search className="cursor-pointer h-4 w-4 hover:text-red-600" />
+            <Search className="cursor-pointer text-white h-4 w-4" />
           </div>
         </div>
         <div className="h-full flex flex-col gap-12 justify-center items-center">
           {/* <ProductsList /> */}
           <div className="flex flex-col items-center gap-10 py-8 px-5">
             {!products || filteredProducts.length === 0 ? (
-              <p>Aucun Produit trouvé</p>
+              <p className="text-[2rem] font-figtree font-semibold tracking-widest text-noir-1">
+                Aucun Produit trouvé
+              </p>
             ) : (
               <div className="flex flex-wrap justify-center gap-10 md:gap-20">
                 {filteredProducts.map(

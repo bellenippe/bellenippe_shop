@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={inter.className}>
+      <body className="bg-grid-small-black/[0.1]">
         <ClerkProvider>
           <div className="fixed top-0 z-30 w-full flex justify-center">
             <ToastProvider />

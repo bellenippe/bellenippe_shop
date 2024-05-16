@@ -5,8 +5,10 @@ import { UserButton, useUser } from "@clerk/nextjs";
 
 export default function MonComptePage() {
   return (
-    <section className="pt-[7rem] px-[5rem] bg-slate-600">
-      <h1 className="text-center text-[3rem]">Mon Compte</h1>
+    <section>
+      <h1 className="pt-[5rem] pb-4 text-center text-[3rem] text-white font-bold uppercase bg-noir-1 bg-grid-small-white/[0.3]">
+        mon compte
+      </h1>
       <div className="grid grid-cols-2">
         <article className=" bg-red-400">
           <h2>Wishlist</h2>

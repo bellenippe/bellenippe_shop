@@ -41,8 +41,10 @@ export default function MonPanier() {
   };
 
   return (
-    <section className="pt-[7rem] lg:px-[5rem] bg-slate-600">
-      <h1 className="text-center text-[3rem]">Mon Panier</h1>
+    <section>
+      <h1 className="pt-[5rem] pb-4 text-center text-[3rem] text-white font-bold uppercase bg-noir-1 bg-grid-small-white/[0.3]">
+        mon panier
+      </h1>
       <div className="flex gap-20 py-16 px-10 max-lg:flex-col">
         <div className="w-2/3 max-lg:w-full">
           {cart.cartItems.length === 0 ? (

@@ -10,25 +10,23 @@ interface ProductCardProps {
 const ProductCard = ({ product, updateSignedInUser }: ProductCardProps) => {
   return (
     <Link href={`/shop/${product._id}`} className="flex flex-col">
-      <div className=" bg-orange-400">
-        <div className="h-[20rem] w-[20rem] md:h-[25rem] md:w-[25rem]">
+      <div className="">
+        <div className="h-[20rem] w-[20rem] md:h-[25rem] md:w-[25rem] shadowSquare">
           <Image
             src={product.media[0]}
             alt={product.title}
-            width={300}
-            height={300}
+            width={1000}
+            height={1000}
             className=" object-cover w-full h-full rounded-sm"
           />
         </div>
-        <div className="flex justify-between items-center mt-1 px-1">
-          <div>
-            <h3>{product.title}</h3>
-            <p>{product.price} €</p>
-          </div>
-          <HeartForFavorite
-            product={product}
-            updateSignedInUser={updateSignedInUser}
-          />
+        <div className="flex justify-between items-center mt-4 py-4 px-4 p-1 bg-noir-1 shadowSquare">
+          <h3 className="text-white font-figtree uppercase font-bold tracking-widest text-[1rem]">
+            {product.title}
+          </h3>
+          <p className="text-white font-figtree uppercase font-bold tracking-widest text-[1rem]">
+            {product.price} €
+          </p>
         </div>
       </div>
     </Link>
