@@ -16,8 +16,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        figtree: ["Figtree-VariableFont_wght", "sans-serif"],
-        figtreeItalic: ["Figtree-Italic-VariableFont_wght", "sans-serif"],
+        figtree: ["figtree"],
+        figtreeItalic: ["figtreeItalic"],
+        weirdWords: ["weirdWords"],
       },
       colors: {
         "noir-1": "#0D0C0B",

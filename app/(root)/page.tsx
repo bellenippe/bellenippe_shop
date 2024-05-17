@@ -21,19 +21,19 @@ export default function Home() {
         </div>
         <Link
           href="/shop"
-          className="py-10 px-4 md:px-28 w-full flex bg-white bg-grid-small-black/[0.4] hover:bg-grid-black/[0.1] font-figtree md:tracking-widest text-[1.5rem] md:text-[2rem] text-noir-1 uppercase hover:text-[#232323] transition-all duration-500 ease-in-out"
+          className="py-10 px-4 md:px-28 w-full flex bg-white bg-grid-small-black/[0.4] hover:bg-grid-black/[0.1] font-figtree font-bold md:tracking-widest text-[1.5rem] md:text-[2rem] text-noir-1 uppercase hover:text-[#232323] transition-all duration-500 ease-in-out"
         >
           Belle Nippe Collections - SHOP
         </Link>
         <Link
           href="/editorial"
-          className="py-10 px-4 md:px-28 w-full flex justify-end text-end bg-grey-2 font-figtree md:tracking-widest text-[1.5rem] md:text-[2rem] text-white uppercase hover:bg-grey-3 hover:text-[#232323] bg-grid-small-black/[0.4] hover:bg-grid-black/[0.1]  transition-all duration-500 ease-in-out"
+          className="py-10 px-4 md:px-28 w-full flex justify-end text-end bg-grey-2 font-figtree font-bold md:tracking-widest text-[1.5rem] md:text-[2rem] text-white uppercase hover:bg-grey-3 hover:text-[#232323] bg-grid-small-black/[0.4] hover:bg-grid-black/[0.1]  transition-all duration-500 ease-in-out"
         >
           BOOK - Belle Nippe Collections
         </Link>
       </section>
 
-      <section>
+      <section className="mt-10">
         <Collections />
       </section>
 
@@ -64,10 +64,16 @@ export default function Home() {
         Accessoires
       </Link>
 
-      <section className="bg-white bg-grid-small-black/[0.1] px-4 md:px-28">
-        <h3 className="p-10 text-center text-[2rem] text-noir-1 font-figtree font-bold uppercase tracking-widest">
-          BELLE NIPPE, MAISON DE COUTURE
-        </h3>
+      <section className="bg-white bg-grid-small-black/[0.1] px-4 md:px-28 mt-10">
+        <div>
+          <p className="p-10 text-center text[1.5rem] md:text-[2rem] text-[#c3c3c3] font-weirdWords uppercase tracking-widest">
+            BELLE NIPPE, MAISON DE COUTURE
+          </p>
+          <h3 className="py-10 mt-[-8rem] md:mt-[-8rem] text-center text-[1.5rem] md:text-[2.5rem] text-noir-1 font-figtree font-bold uppercase tracking-widest">
+            BELLE NIPPE, MAISON DE COUTURE
+          </h3>
+        </div>
+
         <Image
           className="object-cover h-[25rem] w-full"
           src="/images/photos/jeans.jpg"

@@ -6,7 +6,7 @@ export default function EditorialPage() {
       <h1 className="pt-[5rem] pb-4 text-center text-[3rem] text-white font-bold uppercase bg-noir-1 bg-grid-small-white/[0.3]">
         éditorial
       </h1>
-      <div className="">
+      <div className="py-12">
         <EditorialCollection />
       </div>
     </section>

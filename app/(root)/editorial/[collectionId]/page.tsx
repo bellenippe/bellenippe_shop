@@ -1,5 +1,6 @@
-import ProductCard from "@/components/ProductCard";
+import ProductCardForEdit from "@/components/ProductCardForEdit";
 import { getCollectionDetails } from "@/lib/actions/actions";
+import Link from "next/link";
 
 export default async function CollectionPage({
   params,
@@ -9,7 +10,7 @@ export default async function CollectionPage({
   const collectionDetails = await getCollectionDetails(params.collectionId);
   console.log(collectionDetails);
   return (
-    <section>
+    <section className="mb-20">
       <h1 className="pt-[5rem] pb-4 text-center text-[3rem] text-white font-bold uppercase bg-noir-1 bg-grid-small-white/[0.3]">
         {collectionDetails.title}
       </h1>
@@ -24,10 +25,18 @@ export default async function CollectionPage({
         confort et durabilité. Découvrez nos collections et laissez-vous séduire
         par l'univers Belle Nippe.
       </p>
-      <div className="flex gap-10 justify-evenly items-center">
-        {collectionDetails.products.map((product: ProductType) => (
-          <ProductCard key={product._id} product={product} />
-        ))}
+      <div className="flex flex-col justify-center items-center gap-12">
+        <div className="flex gap-10 justify-center items-center">
+          {collectionDetails.products.map((product: ProductType) => (
+            <ProductCardForEdit key={product._id} product={product} />
+          ))}
+        </div>
+        <Link
+          href="/editorial"
+          className="w-[90%] mx-auto md:w-[40%] px-8 py-4 text-white font-figtree font-bold text-center tracking-widest uppercase bg-noir-1 hover:bg-grey-4 hover:text-noir-1 transition-all ease-in-out"
+        >
+          Retour
+        </Link>
       </div>
     </section>
   );

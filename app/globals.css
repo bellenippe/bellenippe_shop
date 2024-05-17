@@ -18,6 +18,10 @@ body,
   src: url("../public/fonts/Figtree-Italic-VariableFont_wght.ttf")
     format("truetype");
 }
+@font-face {
+  font-family: "weirdWords";
+  src: url("../public/fonts/Weird Words.otf") format("truetype");
+}
 
 .shadowSquare {
   box-shadow: 15px 10px 1.5px 0px rgba(0, 0, 0, 0.146);

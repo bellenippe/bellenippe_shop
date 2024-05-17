@@ -63,10 +63,10 @@ export default function ShopPage() {
   return (
     <>
       <section className="">
-        <h1 className="pt-[5rem] pb-4 text-center text-[3rem] text-white font-bold uppercase bg-noir-1 bg-grid-small-white/[0.3]">
+        <h1 className="pt-[5rem] pb-4 text-center text-[3rem] text-white font-figtree font-bold uppercase bg-noir-1 bg-grid-small-white/[0.3]">
           Shop
         </h1>
-        <div className="grid md:grid-cols-3 gap-2 md:gap-1 px-4 md:px-[10rem] py-4 bg-grid-small-black/[0.1]">
+        <div className="grid md:grid-cols-3 gap-2 md:gap-1 px-4 md:px-[10rem] py-12 bg-grid-small-black/[0.1]">
           <select
             className="text-white bg-grey-3"
             value={selectedCategory}
