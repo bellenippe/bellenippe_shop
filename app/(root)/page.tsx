@@ -3,6 +3,9 @@ import Link from "next/link";
 import Collections from "@/components/Collections";
 
 import type { Metadata } from "next";
+import RevealLogo from "@/components/RevealLogo";
+import MotionTitle from "@/components/Motions/motionTitle";
+import MotionTitle2 from "@/components/Motions/motionTitle2";
 
 export const metadata: Metadata = {
   title: "Belle Nippe",
@@ -15,28 +18,20 @@ export default function Home() {
       <section className="h-[100vh] flex flex-col justify-center items-center bg-[#fff] ">
         <div className="h-[80%] w-[100%] pt-40 pb-20 mx-[0rem] bg-noir-1 bg-grid-small-black/[0.9] hover:bg-grid-small-white/[0.3]   transition-all duration-1000 ease-in-out ">
           <div className="h-full flex flex-col gap-12 justify-center items-center rounded-sm ">
-            <div className="h-auto w-[60%] md:w-[25rem] flex items-center justify-center ">
-              <Image
-                className="w-auto h-auto object-contain mx-auto lg:w-[30rem] lg:h-auto"
-                src="/images/Logos/bnFullWhiteLogo.png"
-                width={500}
-                height={500}
-                alt="Logo de la marque Belle Nippe"
-              />
-            </div>
+            <RevealLogo />
           </div>
         </div>
         <Link
           href="/shop"
-          className="py-10 px-4 md:px-28 w-full flex bg-white bg-grid-small-black/[0.4] hover:bg-grid-black/[0.1] font-figtree font-bold md:tracking-widest text-[1.5rem] md:text-[2rem] text-noir-1 uppercase hover:text-[#232323] transition-all duration-500 ease-in-out"
+          className="py-10 px-4 md:px-28 w-full flex bg-white bg-grid-small-black/[0.4] hover:bg-grid-black/[0.1] font-figtree font-bold md:tracking-widest text-[1.5rem] md:text-[2rem] text-noir-1 uppercase hover:text-[#232323] transition-all duration-500 ease-in-out overflow-hidden"
         >
-          Belle Nippe - SHOP
+          <MotionTitle />
         </Link>
         <Link
           href="/editorial"
-          className="py-10 px-4 md:px-28 w-full flex justify-end text-end bg-grey-2 font-figtree font-bold md:tracking-widest text-[1.5rem] md:text-[2rem] text-white uppercase hover:bg-grey-3 hover:text-[#232323] bg-grid-small-black/[0.4] hover:bg-grid-black/[0.1]  transition-all duration-500 ease-in-out"
+          className="py-10 px-4 md:px-28 w-full flex justify-end text-end bg-grey-2 font-figtree font-bold md:tracking-widest text-[1.5rem] md:text-[2rem] text-white uppercase hover:bg-grey-3 hover:text-[#232323] bg-grid-small-black/[0.4] hover:bg-grid-black/[0.1]  transition-all duration-500 ease-in-out overflow-hidden"
         >
-          BOOK - Belle Nippe
+          <MotionTitle2 />
         </Link>
       </section>
 

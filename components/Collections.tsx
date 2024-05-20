@@ -30,17 +30,17 @@ const Collections = async () => {
         </div>
       </div>
 
-      <div className="pt-2 pb-4 md:pb-4 flex flex-col items-center gap-8 mx-4 lg:mx-[10rem] 2xl:mx-[20rem]">
-        <p className="text-black font-figtree text-justify tracking-wide text-[0.8rem] lg:text-[1rem]">
+      <div className="pt-2 pb-4 md:pb-4 flex flex-col items-center gap-8 mx-4 px-4 lg:px-28">
+        <p className="text-black font-figtree text-justify tracking-widest text-[0.8rem]">
           {lastCollection.description} puis rajouter quand meme quelque truc
           histoire de décrire la collection et voir comment ca rend avec un
-          paragraphe. Je rajouter quand même quelques ligne en plus ou quelques
-          mot en plus car je ne pense pas qu'il va décrire sa nouvelles
-          collections avec des mots clés. Je rajouter quand même quelques ligne
-          en plus ou quelques mot en plus car je ne pense pas qu'il va décrire
-          sa nouvelles collections avec des mots clés. Je rajouter quand même
-          quelques ligne en plus ou quelques mot en plus car je ne pense pas
-          qu'il va décrire sa nouvelles collections avec des mots clés.
+          paragraphe. Je rajoute quand même quelques lignes en plus ou quelques
+          mots en plus car je ne pense pas qu'il va décrire sa nouvelle
+          collection avec des mots clés. Je rajoute quand même quelques lignes
+          en plus ou quelques mots en plus car je ne pense pas qu'il va décrire
+          sa nouvelle collection avec des mots clés. Je rajoute quand même
+          quelques lignes en plus ou quelques mots en plus car je ne pense pas
+          qu'il va décrire sa nouvelle collection avec des mots clés.
         </p>
 
         <Link

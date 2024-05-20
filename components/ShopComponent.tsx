@@ -5,20 +5,11 @@ import ProductCard from "@/components/ProductCard";
 import { useEffect, useState } from "react";
 import { collectionsStore } from "@/app/store/collections";
 import { Loader } from "@/components/Loader";
-import { useParams } from "next/navigation";
+import { useRouter } from "next/router";
 
 export default function ShopComponent() {
   const [loading, setLoading] = useState(true);
   const [displayCount, setDisplayCount] = useState(4);
-
-  const params = useParams();
-  let collectionId = "";
-
-  if (params.collectionId) {
-    collectionId = Array.isArray(params.collectionId)
-      ? params.collectionId[0]
-      : params.collectionId;
-  }
 
   //! Récupération des produits du state global Zustand
   useEffect(() => {
@@ -37,9 +28,7 @@ export default function ShopComponent() {
   console.log(products);
 
   //! Tri des produits
-  const [selectedCollectionId, setSelectedCollectionId] = useState(
-    collectionId || ""
-  );
+  const [selectedCollectionId, setSelectedCollectionId] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
 
