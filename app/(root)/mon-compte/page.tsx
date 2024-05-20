@@ -1,5 +1,12 @@
 import Orders from "@/components/Orders";
-import Wishlist from "@/components/Wishlist";
+// import Wishlist from "@/components/Wishlist";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Mon Compte | Belle Nippe",
+  description:
+    "Page de gestion de votre compte client sur le site de Belle Nippe.",
+};
 
 import { UserButton, useUser } from "@clerk/nextjs";
 
@@ -25,7 +32,7 @@ export default function MonComptePage() {
         <div className="w-[21rem] flex items-center gap-2 bg-noir-1 p-2">
           <UserButton afterSignOutUrl="/" />
           <p className="text-white font-figtree">
-            Gérer mon compte / Se déconnecter
+            Gérer mon compte | Se déconnecter
           </p>
         </div>
       </div>

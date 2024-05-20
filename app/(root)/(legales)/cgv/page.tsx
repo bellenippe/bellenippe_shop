@@ -1,4 +1,10 @@
-import React from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "CGV | Belle Nippe",
+  description:
+    "Page concernant les conditions générales de vente de Belle Nippe.",
+};
 
 export default function CGV() {
   return (

@@ -2,6 +2,12 @@ import Gallery from "@/components/Gallery";
 import ProductCardForRelated from "@/components/ProductCardForRelated";
 import ProductInfos from "@/components/ProductInfos";
 import { getProductById, getRelatedProducts } from "@/lib/actions/actions";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Shop | Belle Nippe",
+  description: "Page de présentation d'un produit de la marque Belle Nippe.",
+};
 
 export default async function ProductDetails({
   params,
@@ -13,7 +19,7 @@ export default async function ProductDetails({
   return (
     <section className="">
       <h1 className="pt-[5rem] pb-4 text-center text-[2rem] text-white font-bold uppercase bg-noir-1 bg-grid-small-white/[0.3]"></h1>
-      <div className="flex justify-center items-start gap-8 lg:gap-16 py-10 px-5 max-lg:flex-col max-lg:items-center">
+      <div className="flex justify-center items-start gap-8 lg:gap-16 py-10 px-5 max-md:flex-col max-md:items-center">
         <Gallery productMedia={productDetail.media} />
         <ProductInfos productInfos={productDetail} />
       </div>

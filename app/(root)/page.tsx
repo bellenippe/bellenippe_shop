@@ -2,6 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import Collections from "@/components/Collections";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Belle Nippe",
+  description: "Page d'accueil du site de la marque Belle Nippe.",
+};
+
 export default function Home() {
   return (
     <>
@@ -23,13 +30,13 @@ export default function Home() {
           href="/shop"
           className="py-10 px-4 md:px-28 w-full flex bg-white bg-grid-small-black/[0.4] hover:bg-grid-black/[0.1] font-figtree font-bold md:tracking-widest text-[1.5rem] md:text-[2rem] text-noir-1 uppercase hover:text-[#232323] transition-all duration-500 ease-in-out"
         >
-          Belle Nippe Collections - SHOP
+          Belle Nippe - SHOP
         </Link>
         <Link
           href="/editorial"
           className="py-10 px-4 md:px-28 w-full flex justify-end text-end bg-grey-2 font-figtree font-bold md:tracking-widest text-[1.5rem] md:text-[2rem] text-white uppercase hover:bg-grey-3 hover:text-[#232323] bg-grid-small-black/[0.4] hover:bg-grid-black/[0.1]  transition-all duration-500 ease-in-out"
         >
-          BOOK - Belle Nippe Collections
+          BOOK - Belle Nippe
         </Link>
       </section>
 
@@ -64,7 +71,7 @@ export default function Home() {
         Accessoires
       </Link>
 
-      <section className="bg-white bg-grid-small-black/[0.1] px-4 lg:px-28 mt-10">
+      <section className="bg-white bg-grid-small-black/[0.1] px-4 lg:px-28 mt-0 lg:mt-10">
         <div>
           <p className="p-10 text-center text-[1.5rem] md:text-[2rem] text-[#c3c3c3] font-weirdWords uppercase tracking-widest">
             BELLE NIPPE, MAISON DE COUTURE
@@ -81,7 +88,7 @@ export default function Home() {
           height={1080}
           alt="Logo de la marque Belle Nippe"
         />
-        <p className="text-noir-1 text-justify font-figtree tracking-widest mt-8 pb-10">
+        <p className="text-noir-1 text-justify font-figtree tracking-widest mt-8 pb-10 text-[0.8rem] md:Text-[1rem]">
           Un style unique, une mode éthique et responsable. Belle Nippe est une
           maison de couture qui propose des vêtements et accessoires pour femmes
           et hommes. Nos collections sont conçues et fabriquées en France, dans

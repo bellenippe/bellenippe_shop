@@ -14,8 +14,8 @@ const Orders = async () => {
     <div className="px-10 py-5 max-sm:px-3">
       {!orders ||
         (orders.length === 0 && (
-          <p className="text-[2rem] font-figtree font-semibold tracking-widest text-noir-1">
-            Vous n'avez pas encore de commandes
+          <p className="text-[1rem] font-figtree font-semibold tracking-widest text-noir-1">
+            Aucune commande
           </p>
         ))}
       <div>

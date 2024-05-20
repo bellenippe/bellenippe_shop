@@ -1,4 +1,10 @@
-import React from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Livraison & retours | Belle Nippe",
+  description:
+    "Page d'information sur les conditions de livraison et de retour de la marque Belle Nippe.",
+};
 
 export default function CGV() {
   return (

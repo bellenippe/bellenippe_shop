@@ -1,4 +1,9 @@
-import React from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "A Propos | Belle Nippe",
+  description: "Ce qu'il faut savoir à propos de la marque Belle Nippe.",
+};
 
 export default function AproposPage() {
   return (

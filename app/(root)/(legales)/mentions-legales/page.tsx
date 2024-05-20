@@ -1,4 +1,9 @@
-import React from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Mentions Légales | Belle Nippe",
+  description: "Mentions légales du site de la marque Belle Nippe.",
+};
 
 export default function MentionsLegales() {
   return (

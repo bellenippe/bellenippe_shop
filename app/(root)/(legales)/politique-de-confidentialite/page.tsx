@@ -1,4 +1,9 @@
-import React from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Politique de confidentialité | Belle Nippe",
+  description: "Politique de confidentialité de la marque Belle Nippe.",
+};
 
 export default function Politique() {
   return (

@@ -1,5 +1,6 @@
 import { getCollections, getProductById } from "@/lib/actions/actions";
 import ProductCardForHome from "./ProductCardForHome";
+import Link from "next/link";
 
 const Collections = async () => {
   const collections = await getCollections();
@@ -10,8 +11,6 @@ const Collections = async () => {
 
   const firstTwoProducts = await Promise.all(productPromises);
 
-  console.log(firstTwoProducts);
-  // bg-grid-small-black/[0.4]
   return (
     <article className="w-full pb-8">
       <div>
@@ -32,7 +31,7 @@ const Collections = async () => {
       </div>
 
       <div className="pt-2 pb-4 md:pb-4 flex flex-col items-center gap-8 mx-4 lg:mx-[10rem] 2xl:mx-[20rem]">
-        <p className="text-black font-figtree text-justify tracking-wide">
+        <p className="text-black font-figtree text-justify tracking-wide text-[0.8rem] lg:text-[1rem]">
           {lastCollection.description} puis rajouter quand meme quelque truc
           histoire de décrire la collection et voir comment ca rend avec un
           paragraphe. Je rajouter quand même quelques ligne en plus ou quelques
@@ -44,9 +43,12 @@ const Collections = async () => {
           qu'il va décrire sa nouvelles collections avec des mots clés.
         </p>
 
-        <button className="w-[90%] md:w-[40%] px-8 py-4 text-white font-figtree font-bold tracking-widest uppercase bg-noir-1 hover:bg-grey-4 hover:text-noir-1 transition-all ease-in-out">
+        <Link
+          href={`/shop?collectionId=${lastCollection._id}`}
+          className="w-[90%] md:w-[40%] px-8 py-4 text-white font-figtree font-bold tracking-widest uppercase text-center bg-noir-1 hover:bg-grey-4 hover:text-noir-1 transition-all ease-in-out"
+        >
           Voir la collection
-        </button>
+        </Link>
       </div>
     </article>
   );

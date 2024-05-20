@@ -1,5 +1,10 @@
 import ContactForm from "@/components/ContactForm";
-import React from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact | Belle Nippe",
+  description: "Page de contact de la marque Belle Nippe. Contactez-nous !",
+};
 
 export default function ContactPage() {
   return (

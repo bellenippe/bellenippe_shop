@@ -16,20 +16,20 @@ const ProductInfos = ({ productInfos }: { productInfos: ProductType }) => {
   const cart = useCart();
 
   return (
-    <section className="max-w-[400px] flex flex-col gap-6 font-figtree">
+    <section className="max-w-[400px] flex flex-col gap-4 md:gap-6 font-figtree">
       <div className="flex justify-between">
-        <h2 className="text-noir-1 uppercase text-[1.5rem] font-figtree font-semibold">
+        <h2 className="text-noir-1 uppercase text-[1.3rem] md:text-[1.5rem] font-figtree font-semibold">
           {productInfos.title}
         </h2>
         {/* <HeartForFavorite product={productInfos} /> */}
-        <p className="text-grey-2 text-[1.5rem] uppercase font-figtree font-semibold">
+        <p className="text-grey-2 text-[1.3rem] uppercase font-figtree font-semibold">
           {productInfos.price} €
         </p>
       </div>
 
       <div className="">
         <p className="font-semibold">Description :</p>
-        <p className=" text-[0.8rem]">
+        <p className="text-[0.8rem]">
           {productInfos.description} et rajouter un peu de matière pour cette
           description histoire de vor comment ca rend réellement parce que sinon
           ca fait un peu vide et bizarre. Et voila, je vois qu'avec une
@@ -74,12 +74,14 @@ const ProductInfos = ({ productInfos }: { productInfos: ProductType }) => {
         </div>
       )}
 
-      <div className="flex gap-2">
+      <div className="flex gap-2 items-center">
         <p className="font-semibold">Quantité :</p>
         {productInfos.stock === 0 ? (
-          <p>Ce produit n'est plus en stock</p>
+          <p className="text-[0.8rem] lg:text-[1rem]">
+            Ce produit n'est plus en stock
+          </p>
         ) : productInfos.stock === 1 ? (
-          <p>Pièce Unique</p>
+          <p className="text-[0.8rem] lg:text-[1rem]">Pièce Unique</p>
         ) : (
           <div className="flex gap-4 items-center">
             <MinusIcon
