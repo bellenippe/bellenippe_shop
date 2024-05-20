@@ -132,7 +132,7 @@
   }
 
   .activeBurger .l1 {
-    transform: translateY(10px) rotate(45deg);
+    transform: translateY(12px) rotate(45deg);
   }
 
   .activeBurger .l2 {
@@ -140,13 +140,13 @@
   }
 
   .activeBurger .l3 {
-    transform: translateY(-10px) rotate(-45deg);
+    transform: translateY(-5px) rotate(-45deg);
   }
   .headerLogo {
     width: auto;
     height: 2rem;
     margin: 0 0rem;
-    z-index: 11;
+    z-index: 15;
     transition: all 0.3s ease;
   }
   .nav__menuList {
@@ -157,10 +157,10 @@
     left: 0;
     top: 0vh;
     width: 100%;
-    left: -100vh;
+    top: -100vh;
     padding: 1.5rem 1rem;
-    height: 100vh;
-    background-color: #ffffffd9;
+    height: 70vh;
+    background-color: #0d0c0bd4;
     backdrop-filter: blur(55px);
     transition: all 0.5s ease;
     opacity: 0;
@@ -168,18 +168,15 @@
   }
   .nav__menuList.active {
     transition: all 0.5s ease;
-    left: 0;
+    top: 0;
     opacity: 1;
     z-index: 9;
     backdrop-filter: blur(55px);
   }
   .nav__item {
-    color: black;
+    color: white;
+    padding: 0.2rem;
     position: relative;
     font-size: 2rem;
-  }
-  .nav__item.activeLink {
-    /* text-shadow: 0 0 0px #a3dabb, 0 0 5px #a3dabb, 0 0 5px #a3dabb,
-      0 0 5px #a3dabb, 0 0 0px #a3dabb, 0 0 0px #a3dabb; */
   }
 }

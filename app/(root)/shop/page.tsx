@@ -4,9 +4,11 @@ import { productsStore } from "@/app/store/products";
 import ProductCard from "@/components/ProductCard";
 import { useEffect, useState } from "react";
 import { collectionsStore } from "@/app/store/collections";
+import { Loader } from "@/components/Loader";
 
 export default function ShopPage() {
   const [loading, setLoading] = useState(true);
+  const [displayCount, setDisplayCount] = useState(4);
 
   //! Récupération des produits du state global Zustand
   useEffect(() => {
@@ -63,7 +65,7 @@ export default function ShopPage() {
   return (
     <>
       <section className="">
-        <h1 className="pt-[5rem] pb-4 text-center text-[3rem] text-white font-figtree font-bold uppercase bg-noir-1 bg-grid-small-white/[0.3]">
+        <h1 className="pt-[5rem] pb-4 text-center text-[2rem] text-white font-figtree font-bold uppercase bg-noir-1 bg-grid-small-white/[0.3]">
           Shop
         </h1>
         <div className="grid md:grid-cols-3 gap-2 md:gap-1 px-4 md:px-[10rem] py-12 bg-grid-small-black/[0.1]">
@@ -109,24 +111,36 @@ export default function ShopPage() {
         <div className="h-full flex flex-col gap-12 justify-center items-center">
           {/* <ProductsList /> */}
           <div className="flex flex-col items-center gap-10 py-8 px-5">
-            {!products || filteredProducts.length === 0 ? (
+            {loading ? (
+              <Loader />
+            ) : !products || filteredProducts.length === 0 ? (
               <p className="text-[2rem] font-figtree font-semibold tracking-widest text-noir-1">
                 Aucun Produit trouvé
               </p>
             ) : (
               <div className="flex flex-wrap justify-center gap-10 md:gap-20">
-                {filteredProducts.map(
-                  (product: ProductType) =>
-                    product.stock > 0 && (
-                      <ProductCard key={product._id} product={product} />
-                    )
-                )}
+                {filteredProducts
+                  .slice(0, displayCount)
+                  .map((product: ProductType) => (
+                    <ProductCard key={product._id} product={product} />
+                  ))}
               </div>
             )}
           </div>
         </div>
       </section>
-      <section className="px-[1rem]"></section>
+      <div className="py-[3rem] flex justify-center">
+        {displayCount < filteredProducts.length && (
+          <button
+            onClick={() => setDisplayCount(displayCount + 4)}
+            className="bg-grey-3 text-white font-figtree font-semibold tracking-widest uppercase py-2 px-4 hover:bg-noir-1 hover:text-white transition-all ease-in-out"
+          >
+            Voir plus
+          </button>
+        )}
+      </div>
     </>
   );
 }
+
+export const dynamic = "force-dynamic";

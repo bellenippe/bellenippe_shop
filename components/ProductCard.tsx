@@ -15,7 +15,7 @@ const ProductCard = ({ product, updateSignedInUser }: ProductCardProps) => {
   return (
     <Link href={`/shop/${product._id}`} className="flex flex-col">
       <div className="">
-        <div className="relative h-[20rem] w-[20rem] md:h-[25rem] md:w-[25rem] shadowSquare transition-all duration-1000">
+        <div className="relative h-[20rem] w-[20rem] lg:h-[25rem] lg:w-[25rem] shadowSquare transition-all duration-1000">
           <Image
             src={product.media[0] || defaultImage}
             alt={product.title}

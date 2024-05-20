@@ -11,10 +11,10 @@ export default async function CollectionPage({
   console.log(collectionDetails);
   return (
     <section className="mb-20">
-      <h1 className="pt-[5rem] pb-4 text-center text-[3rem] text-white font-bold uppercase bg-noir-1 bg-grid-small-white/[0.3]">
+      <h1 className="pt-[5rem] pb-4 text-center text-[2rem] text-white font-bold uppercase bg-noir-1 bg-grid-small-white/[0.3]">
         {collectionDetails.title}
       </h1>
-      <p className="px-4 py-12 md:px-[15rem] text-justify tracking-wider">
+      <p className="px-4 py-12 lg:px-[15rem] text-justify tracking-wider">
         {collectionDetails.description} Un style unique, une mode éthique et
         responsable. Belle Nippe est une maison de couture qui propose des
         vêtements et accessoires pour femmes et hommes. Nos collections sont
@@ -26,7 +26,7 @@ export default async function CollectionPage({
         par l'univers Belle Nippe.
       </p>
       <div className="flex flex-col justify-center items-center gap-12">
-        <div className="flex gap-10 justify-center items-center">
+        <div className="flex flex-wrap gap-10 justify-center items-center">
           {collectionDetails.products.map((product: ProductType) => (
             <ProductCardForEdit key={product._id} product={product} />
           ))}

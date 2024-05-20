@@ -5,19 +5,15 @@ import { useState } from "react";
 
 interface ProductCardProps {
   product: ProductType;
-  updateSignedInUser?: (updatedUser: UserType) => void;
 }
 
-const ProductCardForHome = ({
-  product,
-  updateSignedInUser,
-}: ProductCardProps) => {
+const ProductCardForRelated = ({ product }: ProductCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const defaultImage = product.media[0];
   return (
     <Link href={`/shop/${product._id}`} className="flex flex-col">
       <div className="">
-        <div className="relative h-[20rem] w-[20rem] lg:h-[25rem] lg:w-[25rem] shadowSquare transition-all duration-1000">
+        <div className="relative h-[9rem] w-[9rem] md:h-[15rem] md:w-[15rem] shadowSquare transition-all duration-1000">
           <Image
             src={product.media[0] || defaultImage}
             alt={product.title}
@@ -43,17 +39,17 @@ const ProductCardForHome = ({
             />
           )}
         </div>
-        <div className="flex justify-between items-center mt-8 py-4 px-4 p-1 bg-noir-1 shadowSquare">
-          <h3 className="text-white font-figtree uppercase font-bold tracking-widest text-[1rem]">
+        {/* <div className="flex justify-between items-center mt-8 py-4 px-4 p-1 bg-noir-1 shadowSquare">
+          <h3 className="text-white font-figtree uppercase font-bold tracking-widest text-[0.6rem]">
             {product.title}
           </h3>
-          <p className="text-white font-figtree uppercase font-bold tracking-widest text-[1rem]">
+          <p className="text-white font-figtree uppercase font-bold tracking-widest text-[0.6rem]">
             {product.price} €
           </p>
-        </div>
+        </div> */}
       </div>
     </Link>
   );
 };
 
-export default ProductCardForHome;
+export default ProductCardForRelated;

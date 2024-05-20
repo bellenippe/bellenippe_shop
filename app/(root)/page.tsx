@@ -64,9 +64,9 @@ export default function Home() {
         Accessoires
       </Link>
 
-      <section className="bg-white bg-grid-small-black/[0.1] px-4 md:px-28 mt-10">
+      <section className="bg-white bg-grid-small-black/[0.1] px-4 lg:px-28 mt-10">
         <div>
-          <p className="p-10 text-center text[1.5rem] md:text-[2rem] text-[#c3c3c3] font-weirdWords uppercase tracking-widest">
+          <p className="p-10 text-center text-[1.5rem] md:text-[2rem] text-[#c3c3c3] font-weirdWords uppercase tracking-widest">
             BELLE NIPPE, MAISON DE COUTURE
           </p>
           <h3 className="py-10 mt-[-8rem] md:mt-[-8rem] text-center text-[1.5rem] md:text-[2.5rem] text-noir-1 font-figtree font-bold uppercase tracking-widest">
@@ -98,5 +98,4 @@ export default function Home() {
   );
 }
 
-// bg-[#8b8b8b]
-// bg-[#6c6c6c]
+export const dynamic = "force-dynamic";

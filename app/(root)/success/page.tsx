@@ -11,12 +11,23 @@ export default function SuccessPage() {
   }, []);
 
   return (
-    <section className="pt-[7rem] lg:px-[5rem] bg-slate-600">
-      <h1 className="text-center text-[3rem]">Paiement réussi</h1>
-      <div>
-        <p>Merci pour votre commande !</p>
-        <Link href="/">Continuer le shopping</Link>
+    <section>
+      <div className="pt-[5rem] pb-4  bg-noir-1 bg-grid-small-white/[0.3]"></div>
+      <div className="flex flex-col justify-center items-center gap-8">
+        <h1 className="py-8 text-center text-[2rem] text-noir-1 font-figtree font-bold uppercase">
+          Paiement réussi
+        </h1>
+        <p className="font-figtree">Merci pour votre commande !</p>
+        <Link
+          href="/"
+          className="w-[90%] md:w-[40%] px-8 py-4 text-white text-center font-figtree font-bold tracking-widest uppercase bg-noir-1 hover:bg-grey-4 hover:text-noir-1 transition-all ease-in-out"
+        >
+          Continuer le shopping
+        </Link>
       </div>
+      <div className="py-[3rem] flex justify-center"></div>
     </section>
   );
 }
+
+export const dynamic = "force-dynamic";

@@ -12,9 +12,9 @@ const Gallery = ({ productMedia }: { productMedia: string[] }) => {
         alt="produit"
         width={800}
         height={800}
-        className="w-96 h-96 rounded-sm object-cover"
+        className="w-96 h-96 object-cover shadowSquare"
       />
-      <div className="flex gap-2 overflow-auto tailwind-scrollbar-hide">
+      <div className="flex gap-2 justify-center md:justify-normal overflow-auto tailwind-scrollbar-hide">
         {productMedia.map((image, index) => (
           <Image
             key={index}
@@ -22,8 +22,8 @@ const Gallery = ({ productMedia }: { productMedia: string[] }) => {
             alt="produit"
             width={200}
             height={200}
-            className={`w-20 h-20 rounded-sm object-cover cursor-pointer ${
-              mainImage === image ? "border-2 border-black" : ""
+            className={`w-20 h-20 object-cover cursor-pointer filter grayscale transition-all ease-in-out ${
+              mainImage === image ? "filter-none" : ""
             }`}
             onClick={() => setMainImage(image)}
           />

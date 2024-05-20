@@ -24,14 +24,14 @@ const Collections = async () => {
           </h1>
         </div>
 
-        <div className="flex flex-wrap justify-center md:justify-center md:px-[10rem] 2xl:px-[20rem] gap-10 md:gap-20 mb-8">
+        <div className="flex flex-wrap justify-center md:justify-center lg:px-[10rem] 2xl:px-[20rem] gap-10 lg:gap-20 mb-8">
           {firstTwoProducts.map((product: ProductType) => (
             <ProductCardForHome key={product._id} product={product} />
           ))}
         </div>
       </div>
 
-      <div className="pt-2 pb-4 md:pb-4 flex flex-col items-center gap-8 mx-4 md:mx-[10rem] 2xl:mx-[20rem]">
+      <div className="pt-2 pb-4 md:pb-4 flex flex-col items-center gap-8 mx-4 lg:mx-[10rem] 2xl:mx-[20rem]">
         <p className="text-black font-figtree text-justify tracking-wide">
           {lastCollection.description} puis rajouter quand meme quelque truc
           histoire de décrire la collection et voir comment ca rend avec un

@@ -43,14 +43,14 @@ export default function MonPanier() {
 
   return (
     <section className=" mb-20">
-      <h1 className="pt-[5rem] pb-4 text-center text-[3rem] text-white font-bold uppercase bg-noir-1 bg-grid-small-white/[0.3]">
+      <h1 className="pt-[5rem] pb-4 text-center text-[2rem] text-white font-bold uppercase bg-noir-1 bg-grid-small-white/[0.3]">
         mon panier
       </h1>
-      <div className="flex gap-20 py-16 px-10 max-lg:flex-col">
+      <div className="flex gap-20 py-16 px-4 lg:px-10 max-lg:flex-col">
         <div className="w-2/3 max-lg:w-full">
           {cart.cartItems.length === 0 ? (
             <div className="flex flex-col justify-center items-center gap-8">
-              <p className="text-[2rem] font-figtree font-semibold tracking-widest text-noir-1">
+              <p className="text-[1.5rem] lg:text-[2rem] text-center font-figtree font-semibold tracking-widest text-noir-1">
                 Aucun produit dans le panier
               </p>
               <Link
@@ -64,13 +64,13 @@ export default function MonPanier() {
             <div>
               {cart.cartItems.map((cartItem) => (
                 <div className="flex w-full max-sm:flex-col max-sm:gap-3 max-sm:items-start shadowSquare transition-all duration-500 ease-in-out px-6 py-5 justify-between items-center">
-                  <div className="flex items-center">
+                  <div className="flex flex-col lg:flex-row mx-auto lg:mx-0 items-center">
                     <Image
                       src={cartItem.item.media[0]}
                       alt="produit"
                       width={1000}
                       height={1000}
-                      className="w-40 h-40 object-cover"
+                      className="w-32 h-32 lg:w-32 lg:h-32 object-cover"
                     />
                     <div className="flex flex-col gap-3 ml-4 text-noir-1">
                       <p className="font-figtree uppercase font-bold tracking-widest">
@@ -80,9 +80,11 @@ export default function MonPanier() {
                         {cartItem.item.price} €
                       </p>
                       {cartItem.color && (
-                        <p className="font-figtree uppercase">
+                        <p className="font-figtree">
                           Couleur :{" "}
-                          <span className="font-bold">{cartItem.color}</span>
+                          <span className="font-bold uppercase">
+                            {cartItem.color}
+                          </span>
                         </p>
                       )}
                       <p>
@@ -91,7 +93,7 @@ export default function MonPanier() {
                       </p>
                     </div>
                   </div>
-                  <div className="flex gap-4 items-center">
+                  <div className="flex gap-4 items-center mx-auto">
                     <MinusCircle
                       size={20}
                       className="text-black hover:text-red-500 cursor-pointer"
@@ -103,7 +105,7 @@ export default function MonPanier() {
                     <p>{cartItem.quantity}</p>
                     <PlusCircle
                       size={20}
-                      className="text-black hover:text-red-500 cursor-pointer"
+                      className="text-black hover:text-blue-500 cursor-pointer"
                       onClick={() =>
                         cartItem.quantity < cartItem.item.stock &&
                         cart.increaseQuantity(cartItem.item._id)
@@ -111,7 +113,7 @@ export default function MonPanier() {
                     />
                   </div>
                   <Trash
-                    className="hover:text-red-500 cursor-pointer"
+                    className="hover:text-red-500 cursor-pointer mx-auto lg:mx-0 w-6 h-6"
                     onClick={() => cart.removeItem(cartItem.item._id)}
                   />
                 </div>
@@ -120,8 +122,8 @@ export default function MonPanier() {
           )}
         </div>
 
-        <div className="w-1/3 h-full flex flex-col gap-8 bg-grey-2 bg-grid-small-white/[0.3] px-4 py-5">
-          <p className=" font-figtree uppercase text-white font-bold text-[1.5rem]">
+        <div className="w-full lg:w-1/3  h-full flex flex-col gap-8 bg-grey-2 bg-grid-small-white/[0.3] px-4 py-5">
+          <p className="font-figtree uppercase text-white font-bold text-[1.5rem]">
             Votre Commande{" "}
             <span>
               (
@@ -146,3 +148,5 @@ export default function MonPanier() {
     </section>
   );
 }
+
+export const dynamic = "force-dynamic";

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import HeartForFavorite from "./HeartForFavorite";
-import { MinusCircle, PlusCircle } from "lucide-react";
+// import HeartForFavorite from "./HeartForFavorite";
+import { MinusIcon, PlusIcon } from "lucide-react";
 import useCart from "@/lib/hooks/useCart";
 
 const ProductInfos = ({ productInfos }: { productInfos: ProductType }) => {
@@ -16,27 +16,35 @@ const ProductInfos = ({ productInfos }: { productInfos: ProductType }) => {
   const cart = useCart();
 
   return (
-    <div className="max-w-[400px] flex flex-col gap-4">
-      <div className="flex justify-between items-center">
-        <p>{productInfos.title}</p>
-        <HeartForFavorite product={productInfos} />
+    <section className="max-w-[400px] flex flex-col gap-6 font-figtree">
+      <div className="flex justify-between">
+        <h2 className="text-noir-1 uppercase text-[1.5rem] font-figtree font-semibold">
+          {productInfos.title}
+        </h2>
+        {/* <HeartForFavorite product={productInfos} /> */}
+        <p className="text-grey-2 text-[1.5rem] uppercase font-figtree font-semibold">
+          {productInfos.price} €
+        </p>
       </div>
 
-      <p>{productInfos.price} €</p>
-
-      <div className="flex gap-2">
-        <p>Description :</p>
-        <p>{productInfos.description}</p>
+      <div className="">
+        <p className="font-semibold">Description :</p>
+        <p className=" text-[0.8rem]">
+          {productInfos.description} et rajouter un peu de matière pour cette
+          description histoire de vor comment ca rend réellement parce que sinon
+          ca fait un peu vide et bizarre. Et voila, je vois qu'avec une
+          description plus fournie, le visuel n'est pas ouf...
+        </p>
       </div>
       {productInfos.colors.length > 0 && (
-        <div className="flex gap-2">
-          <p>Couleurs :</p>
+        <div className="flex gap-2 items-center">
+          <p className="font-semibold">Couleurs :</p>
           <div className="flex gap-1">
             {productInfos.colors.map((color, index) => (
               <p
                 key={index}
-                className={`border border-black px-2 rounded-sm cursor-pointer ${
-                  selectedColor === color && "bg-black text-white"
+                className={`text-[0.8rem] border border-noir-1 px-2 cursor-pointer hover:bg-grey-4 ${
+                  selectedColor === color && "bg-noir-1 text-white"
                 }`}
                 onClick={() => setSelectedColor(color)}
               >
@@ -48,14 +56,14 @@ const ProductInfos = ({ productInfos }: { productInfos: ProductType }) => {
       )}
 
       {productInfos.size.length > 0 && (
-        <div className="flex gap-2">
-          <p>Taille :</p>
+        <div className="flex gap-2 items-center">
+          <p className="font-semibold">Taille :</p>
           <div>
             {productInfos.size.map((siz, index) => (
               <p
                 key={index}
-                className={`border border-black px-2 rounded-sm cursor-pointer ${
-                  selectedSize === siz && "bg-black text-white"
+                className={`text-[0.8rem] border border-noir-1 px-2 cursor-pointer ${
+                  selectedSize === siz && "bg-noir-1 text-white"
                 }`}
                 onClick={() => setSelectedSize(siz)}
               >
@@ -66,23 +74,23 @@ const ProductInfos = ({ productInfos }: { productInfos: ProductType }) => {
         </div>
       )}
 
-      <div className="felx flex-col gap-2">
-        <p>Quantité :</p>
+      <div className="flex gap-2">
+        <p className="font-semibold">Quantité :</p>
         {productInfos.stock === 0 ? (
           <p>Ce produit n'est plus en stock</p>
         ) : productInfos.stock === 1 ? (
           <p>Pièce Unique</p>
         ) : (
           <div className="flex gap-4 items-center">
-            <MinusCircle
+            <MinusIcon
               size={20}
-              className="text-black hover:text-red-500 cursor-pointer"
+              className="text-noir-1 hover:text-red-500 cursor-pointer"
               onClick={() => quantity > 1 && setQuantity(quantity - 1)}
             />
             <p>{quantity}</p>
-            <PlusCircle
+            <PlusIcon
               size={20}
-              className="text-black hover:text-red-500 cursor-pointer"
+              className="text-noir-1 hover:text-blue-500 cursor-pointer"
               onClick={() =>
                 quantity < productInfos.stock && setQuantity(quantity + 1)
               }
@@ -92,7 +100,7 @@ const ProductInfos = ({ productInfos }: { productInfos: ProductType }) => {
       </div>
 
       <button
-        className="outline py-3 rounded-sm hover:bg-black hover:text-white"
+        className="w-full px-8 py-4 text-white font-figtree font-bold tracking-widest uppercase bg-noir-1 hover:bg-grey-4 hover:text-noir-1 transition-all ease-in-out"
         disabled={productInfos.stock === 0}
         onClick={() => {
           cart.addItem({
@@ -105,7 +113,7 @@ const ProductInfos = ({ productInfos }: { productInfos: ProductType }) => {
       >
         Ajouter au panier
       </button>
-    </div>
+    </section>
   );
 };
 

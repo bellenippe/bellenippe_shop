@@ -13,26 +13,29 @@ const Orders = async () => {
   return (
     <div className="px-10 py-5 max-sm:px-3">
       {!orders ||
-        (orders.length === 0 && <p>Vous n'avez pas encore de commandes</p>)}
+        (orders.length === 0 && (
+          <p className="text-[2rem] font-figtree font-semibold tracking-widest text-noir-1">
+            Vous n'avez pas encore de commandes
+          </p>
+        ))}
       <div>
         {orders.map((order: OrderType) => (
           <div key={order._id} className="border-b-2 border-gray-300 py-5">
-            <p className="font-bold">Numéro de commande : {order._id}</p>
+            <h4 className="font-bold font-figtree">
+              N° de commande : {order._id}
+            </h4>
             <p>Total de la commande : {order.totalAmount} €</p>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-wrap gap-4 pt-4">
               {order.products.map((orderItem: OrderItemType) => (
-                <div
-                  key={orderItem.product._id}
-                  className="flex justify-between"
-                >
+                <div key={orderItem.product._id} className="flex justify-start">
                   <Image
                     src={orderItem.product.media[0]}
                     alt={orderItem.product.title}
                     height={100}
                     width={100}
-                    className="w-32 h-32 object-cover rounded-sm"
+                    className="w-32 h-32 object-cover"
                   />
-                  <div className="flex flex-col justify-between">
+                  <div className="flex flex-col pl-4 justify-between">
                     <p>{orderItem.product.title}</p>
                     <p>{orderItem.product.price} €</p>
                     <p>Couleur : {orderItem.color}</p>

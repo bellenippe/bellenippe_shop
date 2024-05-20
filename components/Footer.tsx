@@ -108,7 +108,7 @@ export default function Footer() {
                 Contactez-nous
               </Link>
               <Link
-                href="/cgv"
+                href="/livraison-retours"
                 className="hover:text-grey-3 transition-all ease-in-out"
               >
                 Livraisons & Retours
@@ -120,7 +120,7 @@ export default function Footer() {
                 Mentions Légales
               </Link>
               <Link
-                href="/politique-de-confidentitalite"
+                href="/politique-de-confidentialite"
                 className="hover:text-grey-3 transition-all ease-in-out"
               >
                 Politique de Confidentialité
