@@ -24,7 +24,7 @@ const Collections = async () => {
           </h1>
         </div>
 
-        <div className="flex flex-wrap justify-center md:justify-center lg:px-[10rem] 2xl:px-[20rem] gap-10 lg:gap-20 mb-8">
+        <div className="flex flex-wrap justify-center md:justify-center lg:px-[10rem] 2xl:px-[15rem] gap-10 lg:gap-20 mb-8">
           {firstTwoProducts.map((product: ProductType) => (
             <ProductCardForHome key={product._id} product={product} />
           ))}

@@ -110,13 +110,9 @@ export default function ShopPage() {
         </div>
         <div className="h-full flex flex-col gap-12 justify-center items-center">
           {/* <ProductsList /> */}
-          <div className="flex flex-col items-center gap-10 py-8 px-5">
+          <div className="flex flex-col items-center gap-10 py-8 px-5 lg:px-[20rem]">
             {loading ? (
               <Loader />
-            ) : !products || filteredProducts.length === 0 ? (
-              <p className="text-[2rem] font-figtree font-semibold tracking-widest text-noir-1">
-                Aucun Produit trouvé
-              </p>
             ) : (
               <div className="flex flex-wrap justify-center gap-10 md:gap-20">
                 {filteredProducts
@@ -144,3 +140,9 @@ export default function ShopPage() {
 }
 
 export const dynamic = "force-dynamic";
+
+// : !products || filteredProducts.length === 0 ? (
+//   <p className="text-[2rem] font-figtree font-semibold tracking-widest text-noir-1">
+//     Aucun Produit trouvé
+//   </p>
+// )
