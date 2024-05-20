@@ -110,7 +110,7 @@ export default function ShopPage() {
         </div>
         <div className="h-full flex flex-col gap-12 justify-center items-center">
           {/* <ProductsList /> */}
-          <div className="flex flex-col items-center gap-10 py-8 px-5 lg:px-[20rem]">
+          <div className="flex flex-col items-center gap-10 py-8 px-5 lg:px-[15rem]">
             {loading ? (
               <Loader />
             ) : (
