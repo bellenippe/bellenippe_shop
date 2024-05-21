@@ -84,14 +84,10 @@ export default function Home() {
           alt="Logo de la marque Belle Nippe"
         />
         <p className="text-noir-1 text-justify font-figtree tracking-widest mt-8 pb-10 text-[0.8rem] md:Text-[1rem]">
-          Un style unique, une mode éthique et responsable. Belle Nippe est une
-          maison de couture qui propose des vêtements et accessoires pour femmes
-          et hommes. Nos collections sont conçues et fabriquées en France, dans
-          notre atelier situé à Orléans. Nous utilisons des matières premières
-          de qualité, respectueuses de l'environnement et des conditions de
-          travail des ouvriers. Notre objectif est de proposer des vêtements et
-          accessoires qui allient style, confort et durabilité. Découvrez nos
-          collections et laissez-vous séduire par l'univers Belle Nippe.
+          Belle Nippe est une marque de vêtement française sur-mesure. Elle
+          propose des pièces uniques ou des pièces en séries limités. Avec un
+          esprit audaciaux et novateur, Belle Nippe veut montrer, à travers ses
+          créations, une identité rare mais identifiable.
         </p>
       </section>
 
