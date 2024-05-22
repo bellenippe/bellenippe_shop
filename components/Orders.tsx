@@ -25,6 +25,7 @@ const Orders = async () => {
               N° de commande : {order._id}
             </h4>
             <p>Total de la commande : {order.totalAmount} €</p>
+
             <div className="flex flex-wrap gap-4 pt-4">
               {order.products.map((orderItem: OrderItemType) => (
                 <div key={orderItem.product._id} className="flex justify-start">

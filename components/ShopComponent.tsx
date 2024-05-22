@@ -5,7 +5,6 @@ import ProductCard from "@/components/ProductCard";
 import { useEffect, useState } from "react";
 import { collectionsStore } from "@/app/store/collections";
 import { Loader } from "@/components/Loader";
-import { useRouter } from "next/router";
 
 export default function ShopComponent() {
   const [loading, setLoading] = useState(true);
@@ -24,8 +23,6 @@ export default function ShopComponent() {
   const collections = collectionsStore(
     (state: { collections: CollectionType[] }) => state.collections
   );
-
-  console.log(products);
 
   //! Tri des produits
   const [selectedCollectionId, setSelectedCollectionId] = useState("");
@@ -62,6 +59,7 @@ export default function ShopComponent() {
       (selectedCategory === "" ? true : product.category === selectedCategory)
     );
   });
+
   return (
     <>
       <div className="grid md:grid-cols-3 gap-2 md:gap-1 px-4 md:px-[10rem] py-12 bg-grid-small-black/[0.1]">

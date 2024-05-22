@@ -15,6 +15,7 @@ export default function MonPanierComponent() {
     0
   );
   const totalRounded = parseFloat(total.toFixed(2));
+  console.log("[cart]", cart);
 
   const customer = {
     clerkId: user?.id,

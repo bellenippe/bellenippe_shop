@@ -8,6 +8,13 @@ export default function SuccessPage() {
 
   useEffect(() => {
     cart.clearCart();
+
+    // fetch("/api/send", {
+    //   method: "GET",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // });
   }, []);
 
   return (

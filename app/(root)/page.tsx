@@ -68,11 +68,11 @@ export default function Home() {
 
       <section className="bg-white bg-grid-small-black/[0.1] px-4 lg:px-28 mt-0 lg:mt-10">
         <div>
-          <p className="p-10 text-center text-[1.5rem] md:text-[2rem] text-[#c3c3c3] font-weirdWords uppercase tracking-widest">
-            BELLE NIPPE, MAISON DE COUTURE
+          <p className="p-10 text-center text-[1.5rem] md:text-[3rem] text-[#c3c3c3] font-weirdWords uppercase tracking-widest">
+            BELLE NIPPE
           </p>
           <h3 className="py-10 mt-[-8rem] md:mt-[-8rem] text-center text-[1.5rem] md:text-[2.5rem] text-noir-1 font-figtree font-bold uppercase tracking-widest">
-            BELLE NIPPE, MAISON DE COUTURE
+            BELLE NIPPE
           </h3>
         </div>
 
