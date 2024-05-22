@@ -35,7 +35,7 @@ export default function Home() {
         </Link>
       </section>
 
-      <section className="mt-10">
+      <section className="my-16">
         <Collections />
       </section>
 
@@ -66,29 +66,29 @@ export default function Home() {
         Accessoires
       </Link>
 
-      <section className="bg-white bg-grid-small-black/[0.1] px-4 lg:px-28 mt-0 lg:mt-10">
+      <section className="bg-white bg-grid-small-black/[0.1] px-4 lg:px-28 mt-0 lg:my-16">
         <div>
-          <p className="p-10 text-center text-[1.5rem] md:text-[3rem] text-[#c3c3c3] font-weirdWords uppercase tracking-widest">
+          <p className="p-4 text-center text-[1.5rem] md:text-[3rem] text-[#c3c3c3] font-weirdWords uppercase tracking-widest">
             BELLE NIPPE
           </p>
-          <h3 className="py-10 mt-[-8rem] md:mt-[-8rem] text-center text-[1.5rem] md:text-[2.5rem] text-noir-1 font-figtree font-bold uppercase tracking-widest">
+          <h3 className="py-4 mt-[-8rem] md:mt-[-8rem] text-center text-[1.5rem] md:text-[2.5rem] text-noir-1 font-figtree font-bold uppercase tracking-widest">
             BELLE NIPPE
           </h3>
         </div>
 
-        <Image
-          className="object-cover h-[25rem] w-full"
-          src="/images/photos/jeans.jpg"
-          width={1920}
-          height={1080}
-          alt="Logo de la marque Belle Nippe"
-        />
-        <p className="text-noir-1 text-justify font-figtree tracking-widest mt-8 pb-10 text-[0.8rem] md:Text-[1rem]">
+        <p className="mt-8 text-noir-1 text-justify font-figtree tracking-widest pb-10 text-[0.8rem] md:text-[1rem]">
           Belle Nippe est une marque de vêtement française sur-mesure. Elle
           propose des pièces uniques ou des pièces en séries limités. Avec un
           esprit audaciaux et novateur, Belle Nippe veut montrer, à travers ses
           créations, une identité rare mais identifiable.
         </p>
+        <Image
+          className="object-cover h-[25rem] w-full mb-8"
+          src="/images/photos/jeans.jpg"
+          width={1920}
+          height={1080}
+          alt="Logo de la marque Belle Nippe"
+        />
       </section>
 
       <section></section>

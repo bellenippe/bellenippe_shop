@@ -15,7 +15,7 @@ const Collections = async () => {
     <article className="w-full pb-8">
       <div>
         <div>
-          <p className="p-10 text-center text-[1rem] md:text-[2rem] font-weirdWords font-bold uppercase text-[#c3c3c3]  tracking-widest">
+          <p className="py-4 text-center text-[1rem] md:text-[2rem] font-weirdWords font-bold uppercase text-[#c3c3c3]  tracking-widest">
             {lastCollection.title}
           </p>
           <h1 className="mt-[-4rem] md:mt-[-5.5rem] pb-10 text-center text-[1.5rem] md:text-[2.5rem] font-figtree font-bold uppercase text-noir-1 tracking-widest">

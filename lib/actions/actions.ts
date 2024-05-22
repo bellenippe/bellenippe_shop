@@ -2,7 +2,7 @@ export const getCollections = async () => {
   const collections = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/collections`,
     {
-      next: { revalidate: 3600 },
+      next: { revalidate: 100 },
     }
   );
   return await collections.json();
@@ -11,9 +11,7 @@ export const getCollections = async () => {
 export const getCollectionDetails = async (collectionId: string) => {
   const collection = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/collections/${collectionId}`,
-    {
-      next: { revalidate: 3600 },
-    }
+    { cache: "no-store" }
   );
   return await collection.json();
 };
