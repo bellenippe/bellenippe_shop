@@ -29,9 +29,7 @@ export const getProducts = async () => {
 export const getProductById = async (productId: string) => {
   const product = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/products/${productId}`,
-    {
-      next: { revalidate: 1000 },
-    }
+    { cache: "no-store" }
   );
   return await product.json();
 };
