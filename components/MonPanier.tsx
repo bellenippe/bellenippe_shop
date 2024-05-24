@@ -141,6 +141,7 @@ export default function MonPanierComponent() {
         <button
           className="bg-white py-3 w-full hover:bg-noir-1 uppercase font-figtree font-bold text-noir-1 tracking-widest hover:text-white transition-all ease-in-out"
           onClick={handleCheckout}
+          disabled={cart.cartItems.length === 0}
         >
           Checkout
         </button>

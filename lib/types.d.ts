@@ -35,6 +35,7 @@ type OrderType = {
   products: [OrderItemType];
   shippingRate: string;
   totalAmount: number;
+  statut: string;
 };
 
 type OrderItemType = {

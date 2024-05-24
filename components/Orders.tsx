@@ -18,13 +18,22 @@ const Orders = async () => {
             Aucune commande
           </p>
         ))}
-      <div>
+      <div className="flex flex-wrap justify-between">
         {orders.map((order: OrderType) => (
-          <div key={order._id} className="border-b-2 border-gray-300 py-5">
+          <div
+            key={order._id}
+            className="border-b-2 border-grey-3 py-5 w-[45%] font-figtree"
+          >
             <h4 className="font-bold font-figtree">
               N° de commande : {order._id}
             </h4>
-            <p>Total de la commande : {order.totalAmount} €</p>
+            <p>
+              Total de la commande :{" "}
+              <span className="font-bold">{order.totalAmount} €</span>
+            </p>
+            <p>
+              Statut : <span className="font-bold">{order.statut}</span>
+            </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
               {order.products.map((orderItem: OrderItemType) => (
@@ -36,8 +45,8 @@ const Orders = async () => {
                     width={100}
                     className="w-32 h-32 object-cover"
                   />
-                  <div className="flex flex-col pl-4 justify-between">
-                    <p>{orderItem.product.title}</p>
+                  <div className="flex flex-col pl-4 justify-between font-figtree">
+                    <p className="font-bold">{orderItem.product.title}</p>
                     <p>{orderItem.product.price} €</p>
                     <p>Couleur : {orderItem.color}</p>
                     <p>Taille : {orderItem.size}</p>
