@@ -18,11 +18,11 @@ const Orders = async () => {
             Aucune commande
           </p>
         ))}
-      <div className="flex flex-wrap justify-between">
+      <div className="flex flex-col gap-8 justify-center items-center md:flex-row">
         {orders.map((order: OrderType) => (
           <div
             key={order._id}
-            className="border-b-2 border-grey-3 py-5 w-[45%] font-figtree"
+            className="w-full border-b-2 py-5 md:w-[45%] font-figtree bg-grey-4 bg-opacity-50 bg-grid-small-grey-2/[0.4] px-4"
           >
             <h4 className="font-bold font-figtree">
               N° de commande : {order._id}

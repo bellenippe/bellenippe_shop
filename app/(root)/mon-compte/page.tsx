@@ -22,15 +22,29 @@ export default function MonComptePage() {
           <Wishlist />
         </article> */}
         <article className="px-4 lg:px-28 pt-8">
-          <div className="flex justify-between">
-            <h3 className=" font-figtree font-semibold text-[1.5rem]">
-              Mes commandes :
-            </h3>
-            <div className="w-[21rem] flex items-center gap-2 bg-noir-1 p-2">
+          <div className="flex justify-between flex-col gap-8 md:flex-row md:gap-0">
+            <div
+              className="md:hidden flex flex-row w-full justify-center items-center gap-2 bg-noir-1 p-2"
+              aria-label="Gestion et déconnexion du compte utilisateur."
+            >
               <UserButton afterSignOutUrl="/" />
               <p className="text-white font-figtree">
                 Gérer mon compte | Se déconnecter
               </p>
+            </div>
+            <h3 className="font-figtree font-semibold text-[1.5rem]">
+              Mes commandes :
+            </h3>
+            <div
+              className="hidden md:block w-[21rem] items-center gap-2 bg-noir-1 p-2"
+              aria-label="Gestion et déconnexion du compte utilisateur."
+            >
+              <div className="flex gap-4 justify-center items-center">
+                <UserButton afterSignOutUrl="/" />
+                <p className="text-white font-figtree">
+                  Gérer mon compte | Se déconnecter
+                </p>
+              </div>
             </div>
           </div>
           <Orders />

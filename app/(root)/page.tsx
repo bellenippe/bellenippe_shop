@@ -35,7 +35,7 @@ export default function Home() {
         </Link>
       </section>
 
-      <section className="my-16">
+      <section className="mt-16 mb-4 lg:mt-16 lg:mb-8">
         <Collections />
       </section>
 
@@ -66,12 +66,12 @@ export default function Home() {
         Accessoires
       </Link>
 
-      <section className="bg-white bg-grid-small-black/[0.1] px-4 lg:px-28 mt-0 lg:my-16">
+      <section className="bg-white bg-grid-small-black/[0.1] px-4 lg:px-28 mt-4 md:my-16">
         <div>
           <p className="p-4 text-center text-[1.5rem] md:text-[3rem] text-[#c3c3c3] font-weirdWords uppercase tracking-widest">
             BELLE NIPPE
           </p>
-          <h3 className="py-4 mt-[-8rem] md:mt-[-8rem] text-center text-[1.5rem] md:text-[2.5rem] text-noir-1 font-figtree font-bold uppercase tracking-widest">
+          <h3 className="py-4 mt-[-3.5rem] md:mt-[-8rem] text-center text-[1.5rem] md:text-[2.5rem] text-noir-1 font-figtree font-bold uppercase tracking-widest">
             BELLE NIPPE
           </h3>
         </div>
