@@ -15,7 +15,9 @@ export default async function ProductDetails({
   params: { productId: string };
 }) {
   const productDetail = await getProductById(params.productId);
+
   const relatedProducts = await getRelatedProducts(params.productId);
+
   return (
     <section className="">
       <h1 className="pt-[5rem] pb-4 text-center text-[2rem] text-white font-bold uppercase bg-noir-1 bg-grid-small-white/[0.3]"></h1>

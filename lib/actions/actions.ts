@@ -24,9 +24,9 @@ export const getProducts = async () => {
   return await products.json();
 };
 
-export const getProductById = async (productId: string) => {
+export const getProductById = async (slug: string) => {
   const product = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/products/${productId}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/products/${slug}`,
     { cache: "no-store" }
   );
   return await product.json();
