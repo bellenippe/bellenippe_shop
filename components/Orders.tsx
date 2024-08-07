@@ -12,9 +12,17 @@ const Orders = async () => {
     <div className="px-10 py-5 max-sm:px-3">
       {!orders ||
         (orders.length === 0 && (
-          <p className="text-[1rem] font-figtree font-semibold tracking-widest text-noir-1">
-            Aucune commande
-          </p>
+          <div className="w-full flex flex-col gap-4 justify-center items-center p-10 bg-noir-1">
+            <p className="uppercase text-[1rem] font-figtree font-semibold tracking-widest text-white">
+              Aucune commande
+            </p>
+            <Link
+              href="/shop"
+              className="w-[90%] md:w-[40%] px-8 py-4 text-noir-1 font-figtree font-bold tracking-widest uppercase text-center bg-grey-4 hover:bg-grey-3 hover:text-white transition-all ease-in-out"
+            >
+              Retour à la boutique
+            </Link>
+          </div>
         ))}
       <div className="flex flex-col gap-8 justify-center items-center md:flex-row">
         {orders.map((order: OrderType) => (
