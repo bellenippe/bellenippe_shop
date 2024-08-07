@@ -28,7 +28,7 @@ export default function Footer() {
             />
           </Link>
           <Link
-            href="https://www.instagram.com/bellenippeshop/?igsh=MWowMTk4Y2t6bzc1bA%3D%3D"
+            href="https://www.tiktok.com/@bellenippe"
             target="_blank"
           >
             <FontAwesomeIcon
@@ -38,7 +38,7 @@ export default function Footer() {
             />
           </Link>
           <Link
-            href="https://www.instagram.com/bellenippeshop/?igsh=MWowMTk4Y2t6bzc1bA%3D%3D"
+            href="https://www.youtube.com/@bellenippestudio"
             target="_blank"
           >
             <FontAwesomeIcon
