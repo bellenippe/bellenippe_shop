@@ -17,8 +17,6 @@ const ProductsList = () => {
     (state: any) => state.products
   ) as ProductType[];
 
-  console.log(products);
-
   return (
     <div className="flex flex-col items-center gap-10 py-8 px-5">
       {loading ? (

@@ -46,8 +46,6 @@ const Wishlist = () => {
     setLoading(false);
   };
 
-  console.log(wishlist);
-
   useEffect(() => {
     if (signedInUser) {
       getWishlistProducts();

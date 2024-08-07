@@ -8,8 +8,6 @@ const Orders = async () => {
 
   const orders = await getOrders(userId as string);
 
-  console.log(orders);
-
   return (
     <div className="px-10 py-5 max-sm:px-3">
       {!orders ||

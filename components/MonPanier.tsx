@@ -34,7 +34,6 @@ export default function MonPanierComponent() {
         });
         const data = await res.json();
         window.location.href = data.url;
-        console.log("[checkout-POST]", data);
       }
     } catch (error) {
       console.log("[checkout-POST]", error);
@@ -143,7 +142,7 @@ export default function MonPanierComponent() {
           onClick={handleCheckout}
           disabled={cart.cartItems.length === 0}
         >
-          Checkout
+          Paiement
         </button>
       </div>
     </div>

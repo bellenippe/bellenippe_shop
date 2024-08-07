@@ -6,13 +6,16 @@ import type { Metadata } from "next";
 import RevealLogo from "@/components/RevealLogo";
 import MotionTitle from "@/components/Motions/motionTitle";
 import MotionTitle2 from "@/components/Motions/motionTitle2";
+import { getLastCollectionImage } from "@/lib/actions/actions";
 
 export const metadata: Metadata = {
   title: "Belle Nippe",
   description: "Page d'accueil du site de la marque Belle Nippe.",
 };
 
-export default function Home() {
+export default async function Home() {
+  const collectionImage = await getLastCollectionImage();
+
   return (
     <>
       <section className="h-[100vh] flex flex-col justify-center items-center bg-[#fff] ">
@@ -84,14 +87,12 @@ export default function Home() {
         </p>
         <Image
           className="object-cover h-[25rem] w-full mb-8"
-          src="/images/photos/jeans.jpg"
+          src={collectionImage}
           width={1920}
           height={1080}
           alt="Logo de la marque Belle Nippe"
         />
       </section>
-
-      <section></section>
     </>
   );
 }

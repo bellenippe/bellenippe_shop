@@ -17,10 +17,6 @@ export default function MonComptePage() {
         mon compte
       </h1>
       <div className="">
-        {/* <article className=" bg-red-400">
-          <h2>Wishlist</h2>
-          <Wishlist />
-        </article> */}
         <article className="px-4 lg:px-28 pt-8">
           <div className="flex justify-between flex-col gap-8 md:flex-row md:gap-0">
             <div

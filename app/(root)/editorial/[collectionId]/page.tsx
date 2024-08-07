@@ -1,6 +1,7 @@
 import ProductCardForEdit from "@/components/ProductCardForEdit";
 import { getCollectionDetails } from "@/lib/actions/actions";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,14 +15,22 @@ export default async function CollectionPage({
   params: { collectionId: string };
 }) {
   const collectionDetails = await getCollectionDetails(params.collectionId);
-  console.log(collectionDetails);
 
   return (
     <section className="mb-20">
       <h1 className="pt-[5rem] pb-4 text-center text-[2rem] text-white font-bold uppercase bg-noir-1 bg-grid-small-white/[0.3]">
         {collectionDetails.title}
       </h1>
-      <p className="px-4 py-12 lg:px-[15rem] text-justify tracking-wider text-[0.8rem] md:Text-[1rem]">
+      <div className="px-4 lg:px-[15rem]">
+        <Image
+          className="object-cover h-[25rem] w-full mt-8"
+          src={collectionDetails.image}
+          width={1920}
+          height={1080}
+          alt="Image de la collection"
+        />
+      </div>
+      <p className="px-4 py-8 lg:px-[15rem] text-justify tracking-wider text-[0.8rem] md:Text-[1rem]">
         {collectionDetails.description} Un style unique, une mode éthique et
         responsable. Belle Nippe est une maison de couture qui propose des
         vêtements et accessoires pour femmes et hommes. Nos collections sont

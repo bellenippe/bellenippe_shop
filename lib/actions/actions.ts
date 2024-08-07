@@ -8,6 +8,12 @@ export const getCollections = async () => {
   return await collections.json();
 };
 
+export const getLastCollectionImage = async () => {
+  const collections = await getCollections();
+  const lastCollection = collections[collections.length - 1];
+  return lastCollection.image;
+};
+
 export const getCollectionDetails = async (collectionId: string) => {
   const collection = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/collections/${collectionId}`,

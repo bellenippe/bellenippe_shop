@@ -4,6 +4,22 @@ import Link from "next/link";
 
 const Collections = async () => {
   const collections = await getCollections();
+
+  if (collections.length === 0) {
+    return (
+      <article className="w-full pb-8">
+        <div className="text-center py-8">
+          <h1 className="text-[1.5rem] md:text-[2.5rem] font-figtree font-bold uppercase text-noir-1 tracking-widest">
+            Aucune collection disponible
+          </h1>
+          <p className="text-[1rem] md:text-[1.5rem] text-[#c3c3c3]">
+            Revenez plus tard pour découvrir nos nouvelles collections.
+          </p>
+        </div>
+      </article>
+    );
+  }
+
   const lastCollection = collections[collections.length - 1];
   const productPromises = lastCollection.products
     .slice(0, 2)
