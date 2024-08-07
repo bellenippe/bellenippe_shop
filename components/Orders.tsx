@@ -1,7 +1,7 @@
 import { getOrders } from "@/lib/actions/actions";
 import { auth } from "@clerk/nextjs/server";
 import Image from "next/image";
-import React from "react";
+import Link from "next/link";
 
 const Orders = async () => {
   const { userId } = auth();
