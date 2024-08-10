@@ -30,10 +30,7 @@ const ProductInfos = ({ productInfos }: { productInfos: ProductType }) => {
       <div className="">
         <p className="font-semibold">Description :</p>
         <p className="text-[0.8rem]">
-          {productInfos.description} et rajouter un peu de matière pour cette
-          description histoire de vor comment ca rend réellement parce que sinon
-          ca fait un peu vide et bizarre. Et voila, je vois qu'avec une
-          description plus fournie, le visuel n'est pas ouf...
+          {productInfos.description}
         </p>
       </div>
       {productInfos.colors.length > 0 && (
