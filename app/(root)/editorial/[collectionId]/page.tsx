@@ -31,15 +31,7 @@ export default async function CollectionPage({
         />
       </div>
       <p className="px-4 py-8 lg:px-[15rem] text-justify tracking-wider text-[0.8rem] md:Text-[1rem]">
-        {collectionDetails.description} Un style unique, une mode éthique et
-        responsable. Belle Nippe est une maison de couture qui propose des
-        vêtements et accessoires pour femmes et hommes. Nos collections sont
-        conçues et fabriquées en France, dans notre atelier situé à Orléans.
-        Nous utilisons des matières premières de qualité, respectueuses de
-        l'environnement et des conditions de travail des ouvriers. Notre
-        objectif est de proposer des vêtements et accessoires qui allient style,
-        confort et durabilité. Découvrez nos collections et laissez-vous séduire
-        par l'univers Belle Nippe.
+        {collectionDetails.description}
       </p>
       <div className="flex flex-col justify-center items-center gap-12">
         <div className="flex flex-wrap gap-10 justify-center items-center">
