@@ -79,12 +79,12 @@ export default async function Home() {
           </h3>
         </div>
 
-        <p className="mt-8 text-noir-1 text-justify font-figtree tracking-widest pb-10 text-[0.8rem] md:text-[1rem]">
+{/*         <p className="mt-8 text-noir-1 text-justify font-figtree tracking-widest pb-10 text-[0.8rem] md:text-[1rem]">
           Belle Nippe est une marque de vêtement française sur-mesure. Elle
           propose des pièces uniques ou des pièces en séries limités. Avec un
           esprit audaciaux et novateur, Belle Nippe veut montrer, à travers ses
           créations, une identité rare mais identifiable.
-        </p>
+        </p> */}
         <Image
           className="object-cover h-[25rem] w-full mb-8"
           src={collectionImage}
