@@ -86,7 +86,7 @@ export default async function Home() {
           créations, une identité rare mais identifiable.
         </p> */}
         <Image
-          className="object-cover h-[25rem] w-full mb-8"
+          className="object-cover h-[25rem] w-full my-8"
           src={collectionImage}
           width={1920}
           height={1080}
