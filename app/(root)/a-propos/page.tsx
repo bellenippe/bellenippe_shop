@@ -26,13 +26,13 @@ export default function AproposPage() {
           créations et à vous proposer une pièce qui vous suivra plusieurs
           années. <br /> <br />{" "}
           <span className="font-bold">
-            Notre démarche artistique consiste à ne pas s&apos;emettre de limite
-            et surprendre notre clientèle à chaque collection. Chacune d'entre
+            Notre démarche artistique consiste à ne pas s&apos;e mettre de limite
+            et surprendre notre clientèle à chaque collection. Chacune d'entre elle
             avec sa propre histoire.
           </span>{" "}
           <br /> <br /> L'équipe se compose d'un couturier, qui est seul dans la
           production des articles en vente sur le site/ Ici, vous trouverez nos
-          collections de textiles et accessoires fait-main et tuot ce qui peut
+          collections de textiles et accessoires fait-main et tout ce qui peut
           défendre le savoir faire. <br /> <br />{" "}
           <span className="font-bold">
             Pour finir, nous dirons que si vous souhaitez être bien nippé et
