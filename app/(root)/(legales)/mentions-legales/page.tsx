@@ -15,9 +15,9 @@ export default function MentionsLegales() {
         <div className="flex-1 flex flex-col gap-[1rem] justify-center text-[0.8rem]">
           <h2 className="font-bison text-[2rem]">Propriétaire du site</h2>
           <p>Nom du propriétaire du site : Quentin Fontaine</p>
-          <p>Adresse postale : ....</p>
-          <p>Adresse mail: ....</p>
-          <p>Numéro de téléphone : ....</p>
+          <p>Adresse postale : 3 rue de la chôlerie, 45000 Orléans</p>
+          <p>Adresse mail: bellenippe@gmail.com</p>
+          <p>Numéro de téléphone : 0666750812</p>
 
           <h3 className="font-bold">Hébergeur du site :</h3>
           <p>Nom de l&apos;hébergeur : Vercel</p>
