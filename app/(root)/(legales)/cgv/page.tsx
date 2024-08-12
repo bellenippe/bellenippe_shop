@@ -17,11 +17,11 @@ export default function CGV() {
           <h2 className="text-[1.5rem]">1. Introduction</h2>
           <p>
             Les présentes conditions générales de vente (CGV) régissent les
-            relations contractuelles entre [Nom de l'entreprise], dont le siège
-            social est situé à [Adresse de l'entreprise], immatriculée sous le
-            numéro [Numéro SIRET ou équivalent], ci-après dénommée "le Vendeur",
+            relations contractuelles entre Belle Nippe, dont le siège
+            social est situé à 3 rue de la chôlerie 45000 Orléans, immatriculée sous le
+            numéro 83965653500011, ci-après dénommée "le Vendeur",
             et toute personne physique ou morale, ci-après dénommée "le Client",
-            souhaitant procéder à un achat sur le site internet [URL du site],
+            souhaitant procéder à un achat sur le site internet www.bellenippe.fr,
             ci-après dénommé "le Site".
           </p>
 
