@@ -85,13 +85,15 @@ export default async function Home() {
           esprit audaciaux et novateur, Belle Nippe veut montrer, à travers ses
           créations, une identité rare mais identifiable.
         </p> */}
-        <Image
-          className="object-cover h-[25rem] w-full my-8"
-          src={collectionImage}
-          width={1920}
-          height={1080}
-          alt="Logo de la marque Belle Nippe"
-        />
+       {collectionImage && (
+          <Image
+            className="object-cover h-10 w-10 md:hidden"
+            src={collectionImage}
+            width={300}
+            height={300}
+            alt="Logo de la marque Belle Nippe"
+          />
+        )}
       </section>
     </>
   );
