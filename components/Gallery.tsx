@@ -45,5 +45,3 @@ const Gallery = ({ productMedia }: { productMedia: string[] }) => {
 };
 
 export default Gallery;
-
-export default Gallery;
