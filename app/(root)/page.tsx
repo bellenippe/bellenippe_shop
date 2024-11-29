@@ -14,7 +14,13 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const collectionImage = await getLastCollectionImage();
+  let collectionImage;
+  try {
+    collectionImage = await getLastCollectionImage();
+  } catch (error) {
+    console.error(error);
+    collectionImage = "/path/to/default/image.jpg"; // Remplacez par le chemin de votre image par défaut
+  }
 
   return (
     <>
@@ -85,7 +91,7 @@ export default async function Home() {
           esprit audaciaux et novateur, Belle Nippe veut montrer, à travers ses
           créations, une identité rare mais identifiable.
         </p> */}
-       {collectionImage && (
+
           <Image
             className="object-cover h-10 w-10 md:hidden"
             src={collectionImage}
@@ -93,7 +99,7 @@ export default async function Home() {
             height={300}
             alt="Logo de la marque Belle Nippe"
           />
-        )}
+
       </section>
     </>
   );
