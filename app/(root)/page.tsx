@@ -15,12 +15,9 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   let collectionImage;
-  try {
+
     collectionImage = await getLastCollectionImage();
-  } catch (error) {
-    console.error(error);
-    collectionImage = "/path/to/default/image.jpg"; // Remplacez par le chemin de votre image par défaut
-  }
+
 
   return (
     <>
