@@ -1,9 +1,20 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Gallery = ({ productMedia }: { productMedia: string[] }) => {
-  const [mainImage, setMainImage] = useState(productMedia[0]);
+  const defaultImage = "/path/to/default/image.jpg"; // Remplacez par le chemin de votre image par défaut
+  const images =
+    productMedia && productMedia.length > 0 ? productMedia : [defaultImage];
+  const [mainImage, setMainImage] = useState(images[0]);
+
+  useEffect(() => {
+    if (productMedia && productMedia.length > 0) {
+      setMainImage(productMedia[0]);
+    } else {
+      setMainImage(defaultImage);
+    }
+  }, [productMedia]);
 
   return (
     <div className="flex flex-col gap-3 max-w-[500px]">
@@ -15,7 +26,7 @@ const Gallery = ({ productMedia }: { productMedia: string[] }) => {
         className="w-96 h-96 object-cover shadowSquare"
       />
       <div className="flex gap-2 justify-center md:justify-normal overflow-auto tailwind-scrollbar-hide">
-        {productMedia.map((image, index) => (
+        {images.map((image, index) => (
           <Image
             key={index}
             src={image}
@@ -32,5 +43,7 @@ const Gallery = ({ productMedia }: { productMedia: string[] }) => {
     </div>
   );
 };
+
+export default Gallery;
 
 export default Gallery;
