@@ -4,6 +4,19 @@ import Link from "next/link";
 const EditorialCollection = async () => {
   const collections = await getCollections();
 
+  if (collections.length === 0) {
+    return (
+      <div className="flex flex-wrap gap-4 items-center justify-center">
+        <h2 className="text-[1.5rem] md:text-[2rem] font-bold uppercase text-noir-1">
+          Aucune collection disponible
+        </h2>
+        <p className="text-[1rem] md:text-[1.5rem] text-[#c3c3c3]">
+          Revenez plus tard pour découvrir nos nouvelles collections.
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div>
       <div className="flex flex-wrap gap-4 items-center justify-center">
