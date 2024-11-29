@@ -6,7 +6,7 @@ const EditorialCollection = async () => {
 
   if (collections.length === 0) {
     return (
-      <div className="flex flex-wrap gap-4 items-center justify-center">
+      <div className="flex flex-wrap flex-col gap-4 items-center justify-center">
         <h2 className="text-[1.5rem] md:text-[2rem] font-bold uppercase text-noir-1">
           Aucune collection disponible
         </h2>
@@ -40,3 +40,4 @@ const EditorialCollection = async () => {
 };
 
 export default EditorialCollection;
+
