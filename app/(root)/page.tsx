@@ -86,13 +86,13 @@ export default async function Home() {
           </h3>
         </div>
 
- {collectionImage !== null ? (
+ {collectionImage ? (
           <Image
             className="object-cover h-full w-full mb-8 mt-8"
             src={collectionImage}
             width={1920}
             height={1080}
-            alt="Logo de la marque Belle Nippe"
+            alt="Logo"
           />
         ) : (
           <p className="mt-8 text-noir-1 text-justify font-figtree tracking-widest pb-10 text-[0.8rem] md:text-[1rem]">
