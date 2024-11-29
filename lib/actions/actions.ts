@@ -10,8 +10,14 @@ export const getCollections = async () => {
 
 export const getLastCollectionImage = async () => {
   const collections = await getCollections();
+  const defaultImage = "/path/to/default/image.jpg"; // Remplacez par le chemin de votre image par défaut
+
+  if (collections.length === 0) {
+    return defaultImage;
+  }
+
   const lastCollection = collections[collections.length - 1];
-  return lastCollection.image;
+  return lastCollection.image || defaultImage;
 };
 
 export const getCollectionDetails = async (collectionId: string) => {
