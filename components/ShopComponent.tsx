@@ -105,8 +105,17 @@ export default function ShopComponent() {
       <div className="h-full flex flex-col gap-12 justify-center items-center">
         {/* <ProductsList /> */}
         <div className="flex flex-col items-center gap-10 py-8 px-5 lg:px-[15rem]">
-          {loading ? (
+           {loading ? (
             <Loader />
+          ) : filteredProducts.length === 0 ? (
+            <div className="flex flex-wrap flex-col gap-4 items-center justify-center">
+              <h2 className="text-[1.5rem] md:text-[2rem] font-bold uppercase text-noir-1">
+                Aucun produit disponible
+              </h2>
+              <p className="text-[1rem] md:text-[1.5rem] text-[#c3c3c3]">
+                Revenez plus tard pour découvrir nos nouvelles collections.
+              </p>
+            </div>
           ) : (
             <div className="flex flex-wrap justify-center gap-10 md:gap-20">
               {filteredProducts
