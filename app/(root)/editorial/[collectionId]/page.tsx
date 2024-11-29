@@ -24,7 +24,7 @@ export default async function CollectionPage({
       <div className="px-4 lg:px-[15rem]">
         <Image
           className="object-cover h-[25rem] w-full mt-8"
-          src={collectionDetails.image}
+          src={collectionDetails.image || ""} // Remplacez par le chemin de votre image par défaut
           width={1920}
           height={1080}
           alt="Image de la collection"
