@@ -15,8 +15,12 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   let collectionImage;
-
+  try {
     collectionImage = await getLastCollectionImage();
+  } catch (error) {
+    console.error(error);
+    collectionImage = ""; // Remplacez par le chemin de votre image par défaut
+  }
 
 
   return (
@@ -82,21 +86,43 @@ export default async function Home() {
           </h3>
         </div>
 
-{/*         <p className="mt-8 text-noir-1 text-justify font-figtree tracking-widest pb-10 text-[0.8rem] md:text-[1rem]">
-          Belle Nippe est une marque de vêtement française sur-mesure. Elle
-          propose des pièces uniques ou des pièces en séries limités. Avec un
-          esprit audaciaux et novateur, Belle Nippe veut montrer, à travers ses
-          créations, une identité rare mais identifiable.
-        </p> */}
-
+ {collectionImage ? (
           <Image
-            className="object-cover h-10 w-10 md:hidden"
+            className="object-cover h-full w-full mb-8 mt-8"
             src={collectionImage}
-            width={300}
-            height={300}
+            width={1920}
+            height={1080}
             alt="Logo de la marque Belle Nippe"
           />
-
+        ) : (
+          <p className="mt-8 text-noir-1 text-justify font-figtree tracking-widest pb-10 text-[0.8rem] md:text-[1rem]">
+            <span className="font-bold">Belle Nippe</span> est une marque de
+            couture française qui prône l'artisanat et le savoir-faire. Dans une
+            ère où le savoir-faire se perd, Belle Nippe essaye, à travers ses
+            collections,{" "}
+            <span className="font-bold">
+              de mettre en avant la beauté du "fait main" en proposant des
+              pièces de qualité en quantités limités.
+            </span>{" "}
+            C'est la raison pour laquelle nos prix ne peuvent se confondre avec
+            ceux de l'industrie. Nous passons énormément de temps à réaliser nos
+            créations et à vous proposer une pièce qui vous suivra plusieurs
+            années. <br /> <br />{" "}
+            <span className="font-bold">
+              Notre démarche artistique consiste à ne pas s&apos;emettre de
+              limite et surprendre notre clientèle à chaque collection. Chacune
+              d'entre avec sa propre histoire.
+            </span>{" "}
+            <br /> <br /> L'équipe se compose d'un couturier, qui est seul dans
+            la production des articles en vente sur le site/ Ici, vous trouverez
+            nos collections de textiles et accessoires fait-main et tuot ce qui
+            peut défendre le savoir faire. <br /> <br />{" "}
+            <span className="font-bold">
+              Pour finir, nous dirons que si vous souhaitez être bien nippé et
+              porter des vêtements de qualités, bienvenue chez nous !
+            </span>
+          </p>
+        )}
       </section>
     </>
   );
