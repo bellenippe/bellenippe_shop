@@ -86,7 +86,7 @@ export default async function Home() {
           </h3>
         </div>
 
- {collectionImage ? (
+    {collectionImage === null ? (
           <Image
             className="object-cover h-full w-full mb-8 mt-8"
             src={collectionImage}
