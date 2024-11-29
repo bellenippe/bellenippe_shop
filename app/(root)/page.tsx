@@ -10,10 +10,7 @@ import { getLastCollectionImage } from "@/lib/actions/actions";
 
 export const metadata: Metadata = {
   title: "Belle Nippe",
-  description: " Belle Nippe est une marque de vêtement française sur-mesure. Elle
-          propose des pièces uniques ou des pièces en séries limités. Avec un
-          esprit audaciaux et novateur, Belle Nippe veut montrer, à travers ses
-          créations, une identité rare mais identifiable.",
+  description: "Belle Nippe est une marque de vêtement française sur-mesure. Elle propose des pièces uniques ou des pièces en séries limitées. Avec un esprit audacieux et novateur, Belle Nippe veut montrer, à travers ses créations, une identité rare mais identifiable.",
 };
 
 export default async function Home() {
