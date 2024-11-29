@@ -19,7 +19,7 @@ export default async function Home() {
     collectionImage = await getLastCollectionImage();
   } catch (error) {
     console.error(error);
-    collectionImage = ""; // Remplacez par le chemin de votre image par défaut
+    collectionImage = null; // Remplacez par le chemin de votre image par défaut
   }
 
 
